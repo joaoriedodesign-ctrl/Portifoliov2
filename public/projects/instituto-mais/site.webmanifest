@@ -1,0 +1,12 @@
+{
+  "name": "Instituto MAIS",
+  "short_name": "Instituto MAIS",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fafafa",
+  "theme_color": "#002d32",
+  "icons": [
+    { "src": "assets/img/favicon.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,661 @@
+/* ==========================================================================
+   RESET — lista completa (checklist item 2), não só a óbvia
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body, h1, h2, h3, h4, p, ul, ol, li, figure, blockquote, cite, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+ul, ol { list-style: none; }
+img, picture, svg, iframe { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+input, textarea, select { font: inherit; }
+
+/* ==========================================================================
+   DESIGN TOKENS
+   ========================================================================== */
+:root {
+  --color-bg: #f8f8f8;
+  --color-surface: #f0f8f8;
+  --color-surface-accent: #e8e8f8;
+  --color-border: #d8d8e0;
+
+  --color-primary: #2068f8;
+  --color-primary-hover: #1745ac;
+
+  --color-text-primary: #000000;
+  --color-heading: #5a5a5a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #6f6f6f;
+
+  --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-accent: 'Inter', var(--font-base);
+
+  --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --container-max: 1280px;
+  --gutter-desktop: 80px;
+  --gutter-mobile: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px; /* compensa header fixo ao usar âncoras */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { color: var(--color-heading); font-weight: 600; }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -48px;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  z-index: 1000;
+  transition: top var(--transition-fast);
+}
+.skip-link:focus { top: 8px; }
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 32px;
+  background: var(--color-surface-accent);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+}
+.badge--outline {
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  padding: 6px 16px;
+}
+
+/* ==========================================================================
+   BOTÃO CTA (WhatsApp)
+   ========================================================================== */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 12px 24px 12px 16px;
+  border-radius: 41px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  transition: background-color var(--transition-base), transform var(--transition-fast);
+}
+.btn-cta:hover,
+.btn-cta:focus-visible { background: var(--color-primary-hover); }
+.btn-cta:active { transform: scale(0.98); }
+.btn-cta__icon { width: 24px; height: 24px; flex-shrink: 0; }
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+.site-header__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--gutter-desktop);
+}
+.site-header__brand {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-primary);
+}
+.site-nav {
+  display: flex;
+  gap: 32px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--color-text-secondary);
+}
+.site-nav a:hover,
+.site-nav a:focus-visible { color: var(--color-primary); }
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--color-surface-accent);
+  border: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   MENU MOBILE (overlay tela cheia)
+   Anotação do Figma: "Colocar uma transição suave ao abrir o menu no mobile"
+   Anotação do Figma: itens do menu aparecem de cima pra baixo com fade in
+   ========================================================================== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding: 24px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: opacity var(--transition-base), transform var(--transition-base), visibility 0s linear var(--transition-base);
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity var(--transition-base), transform var(--transition-base), visibility 0s linear 0s;
+}
+.mobile-menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.mobile-menu__links a {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  color: var(--color-text-secondary);
+  opacity: 0;
+  transform: translateY(10px);
+}
+.mobile-menu.is-open .mobile-menu__links a {
+  animation: menuLinkIn 0.45s ease forwards;
+}
+.mobile-menu.is-open .mobile-menu__links a:nth-child(1) { animation-delay: 0.05s; }
+.mobile-menu.is-open .mobile-menu__links a:nth-child(2) { animation-delay: 0.12s; }
+.mobile-menu.is-open .mobile-menu__links a:nth-child(3) { animation-delay: 0.19s; }
+.mobile-menu.is-open .mobile-menu__links a:nth-child(4) { animation-delay: 0.26s; }
+
+@keyframes menuLinkIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-cta--overlay { font-size: 20px; }
+
+.mobile-menu__close {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.menu-open { overflow: hidden; }
+
+/* ==========================================================================
+   HERO
+   Anotação do Figma: "Imagem de fundo tem 70% de opacidade"
+   ========================================================================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 16px var(--gutter-desktop) 0;
+  background-image: url('../assets/img/hero-background.webp');
+  background-size: cover;
+  background-position: center;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #fff;
+  opacity: 0.3; /* clareia o fundo pra manter a leitura do texto (equivale à imagem a 70% de opacidade) */
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+.hero__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 576px;
+  padding-bottom: 48px;
+}
+.hero__text .badge { margin-bottom: 8px; }
+.hero h1 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+.hero__lead {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+}
+.crm-line {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.hero__figure {
+  position: relative;
+  flex: 1 0 0;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+/* A própria imagem exportada do Figma já traz a forma azul arredondada
+   "assada" no PNG (cantos com transparência) — não desenhar forma por cima. */
+.hero__photo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 704px;
+  height: auto;
+  display: block;
+}
+.hero__photo--mobile { display: none; }
+
+/* ==========================================================================
+   SEÇÕES — genérico
+   ========================================================================== */
+.section {
+  padding: 96px var(--gutter-desktop);
+  background: var(--color-bg);
+}
+.section--accent { background: var(--color-surface-accent); }
+.section--surface { background: var(--color-surface); }
+.section__inner { max-width: var(--container-max); margin: 0 auto; }
+
+.section h2 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+/* ==========================================================================
+   SINAIS E DESAFIOS
+   Anotação do Figma: cards aparecem de cima pra baixo / esq. pra dir. com fade in
+   ========================================================================== */
+.sinais { display: flex; gap: 64px; align-items: flex-start; }
+.sinais__intro { flex: 0 0 284px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; justify-content: center; }
+.sinais__intro p { font-size: 14px; line-height: 20px; }
+
+.sinais__grid {
+  flex: 1 0 0;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.numero-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.numero-card__num-wrap { position: relative; overflow: hidden; height: 72px; }
+.numero-card__num {
+  font-size: 64px;
+  line-height: 72px;
+  font-weight: 400;
+  color: var(--color-primary);
+  background: linear-gradient(180deg, var(--color-primary) 55%, rgba(32, 104, 248, 0.35) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.numero-card p { font-size: 14px; line-height: 20px; }
+
+/* ==========================================================================
+   SOBRE O MÉDICO
+   ========================================================================== */
+.sobre { display: flex; align-items: center; gap: 32px; }
+.sobre__photo {
+  flex: 0 0 317px;
+  width: 317px;
+  height: 332px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.sobre__text { flex: 1 0 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.sobre__text .badge { margin-bottom: 4px; }
+.sobre__text p { font-size: 14px; line-height: 20px; color: var(--color-text-muted); }
+.sobre__quote {
+  font-style: italic;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: var(--color-primary) !important;
+}
+
+/* ==========================================================================
+   COMO FUNCIONA O TRATAMENTO
+   Anotação do Figma: cards aparecem de cima pra baixo / esq. pra dir. com fade in
+   ========================================================================== */
+.tratamento { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.tratamento__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  max-width: 720px;
+}
+.tratamento__intro p { font-size: 14px; line-height: 20px; }
+
+.tratamento__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.tratamento-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.tratamento-card__icon { flex-shrink: 0; width: 24px; height: 24px; }
+.tratamento-card__body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.tratamento-card h3 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.tratamento-card p { font-size: 14px; line-height: 20px; }
+.tratamento__cta { align-self: center; }
+
+/* ==========================================================================
+   LOCALIZAÇÃO
+   ========================================================================== */
+.localizacao { display: flex; flex-direction: column; gap: 64px; }
+.localizacao__intro { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.localizacao__intro > *:first-child { margin-bottom: 0; }
+.localizacao__intro p { font-size: 14px; line-height: 20px; }
+.localizacao__endereco {
+  border-left: 1px solid var(--color-primary);
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.localizacao__label { font-size: 14px; line-height: 20px; color: var(--color-primary); }
+.localizacao__endereco p:last-child { font-size: 12px; line-height: 16px; font-weight: 500; }
+
+.localizacao__mapa {
+  width: 100%;
+  height: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #d1ddd6;
+  background: #ebf0ec;
+}
+.localizacao__mapa iframe { width: 100%; height: 100%; border: 0; }
+
+/* ==========================================================================
+   FAQ / ACCORDION
+   Anotação do Figma: "Animação suave ao abrir esses chevrons"
+   Progressive enhancement: sem JS, todas as respostas ficam visíveis.
+   ========================================================================== */
+.faq__intro { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 48px; }
+.faq__list { display: flex; flex-direction: column; gap: 8px; }
+
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color var(--transition-fast);
+}
+.faq-item.is-open { border-color: var(--color-primary); }
+
+.faq-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  text-align: left;
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+.faq-item__chevron {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  transition: transform var(--transition-base), color var(--transition-base);
+}
+.faq-item.is-open .faq-item__chevron {
+  color: var(--color-primary);
+  transform: rotate(180deg);
+}
+
+/* técnica grid-template-rows para animação suave sem medir altura via JS */
+.faq-item__panel {
+  display: grid;
+  grid-template-rows: 1fr; /* sem JS: conteúdo visível por padrão */
+  transition: grid-template-rows var(--transition-base);
+}
+.faq-item__panel-inner { overflow: hidden; }
+.faq-item__panel-inner p {
+  padding-top: 16px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-muted);
+}
+.faq-item__placeholder { font-style: italic; opacity: 0.75; }
+
+/* Com JS habilitado: fecha tudo, exceto o item marcado is-open */
+html.js-ready .faq-item__panel { grid-template-rows: 0fr; }
+html.js-ready .faq-item.is-open .faq-item__panel { grid-template-rows: 1fr; }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 64px var(--gutter-desktop) 40px;
+}
+.site-footer__top {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 48px;
+  padding-bottom: 24px;
+}
+.site-footer__brand { display: flex; flex-direction: column; gap: 16px; max-width: 360px; }
+.site-footer__name { font-size: 24px; line-height: 32px; font-weight: 600; color: var(--color-primary); }
+.site-footer__brand p { font-size: 14px; line-height: 20px; }
+
+.site-footer__cols { display: flex; gap: 48px; }
+.site-footer__col { display: flex; flex-direction: column; gap: 12px; font-size: 12px; line-height: 16px; }
+.site-footer__col-title { font-size: 14px; line-height: 20px; font-weight: 700; color: var(--color-text-secondary); }
+.site-footer__col a:hover,
+.site-footer__col a:focus-visible { color: var(--color-primary); }
+
+.site-footer__bottom {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  line-height: 16px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   WIDGET FLUTUANTE WHATSAPP (somente mobile)
+   Anotação do Figma: "Widget fixo em todo o mobile"
+   ========================================================================== */
+.whatsapp-widget {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 150;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(32, 104, 248, 0.35);
+  transition: background-color var(--transition-base), transform var(--transition-fast);
+}
+.whatsapp-widget:hover,
+.whatsapp-widget:focus-visible { background: var(--color-primary-hover); }
+.whatsapp-widget:active { transform: scale(0.95); }
+
+/* ==========================================================================
+   SCROLL REVEAL (progressive enhancement)
+   Anotação do Figma: itens aparecem em ordem, de cima pra baixo / esq. pra dir.,
+   com fade-in suave. Sem JS (ou com prefers-reduced-motion), tudo fica visível.
+   ========================================================================== */
+html.reveal-ready .reveal-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+html.reveal-ready .reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVO — breakpoint mobile
+   ========================================================================== */
+@media (max-width: 899px) {
+  :root { --gutter-desktop: 16px; }
+
+  .site-header__inner { padding: 16px var(--gutter-mobile); }
+  .site-nav,
+  .site-header__cta { display: none; }
+  .menu-toggle { display: flex; }
+
+  .hero { padding: 40px 0 0; }
+  .hero__inner { flex-direction: column; gap: 32px; align-items: stretch; }
+  .hero__text { max-width: none; padding: 0 var(--gutter-mobile); gap: 16px; }
+  .hero h1 { font-size: 36px; line-height: 44px; }
+  .hero__lead { font-size: 14px; line-height: 20px; }
+  /* A foto mobile já é a exportação final (390x431 @2x = 780x862), então
+     ela ocupa a largura toda, sem recorte manual nem forma extra por cima. */
+  .hero__figure { flex: none; width: 100%; justify-content: center; }
+  .hero__photo--desktop { display: none; }
+  .hero__photo--mobile { display: block; width: 100%; max-width: none; height: auto; }
+
+  .section { padding: 40px 0; }
+  .section__inner { padding: 0 var(--gutter-mobile); }
+  .section h2 { font-size: 24px; line-height: 32px; }
+
+  .sinais { flex-direction: column; gap: 32px; }
+  .sinais__intro { flex: none; }
+  .sinais__grid { grid-template-columns: 1fr; }
+
+  /* Essa seção usa foto de sangria total (edge-to-edge) no mobile, então
+     ela não pode herdar o padding-top genérico de .section — senão sobra
+     uma faixa do fundo da seção acima da foto. */
+  #sobre { padding-top: 0; }
+  .sobre { flex-direction: column; align-items: stretch; gap: 32px; padding: 0; }
+  .sobre__photo { width: 100%; flex-basis: auto; height: auto; aspect-ratio: 780 / 817; border-radius: 0; }
+  .sobre__text { padding: 0 var(--gutter-mobile) 40px; gap: 16px; }
+
+  .tratamento__grid { grid-template-columns: 1fr; gap: 16px; }
+  .tratamento-card h3 { font-size: 24px; }
+  .tratamento__cta { width: 100%; justify-content: center; }
+
+  .localizacao { gap: 16px; }
+  .localizacao__mapa { height: 300px; }
+
+  .faq__intro { margin-bottom: 16px; }
+  .faq-item__trigger { font-size: 16px; line-height: 24px; white-space: normal; }
+
+  .site-footer { padding: 40px var(--gutter-mobile) 80px; }
+  .site-footer__top { flex-direction: column; gap: 32px; padding-bottom: 0; }
+  .site-footer__cols { gap: 32px; }
+  .site-footer__col--links { display: none; }
+  .site-footer__bottom { flex-direction: column; gap: 4px; border-top: 0; padding-top: 0; margin-top: 24px; font-size: 10px; }
+  .site-footer__brand { max-width: none; }
+
+  .whatsapp-widget { display: flex; }
+}
+
+@media (min-width: 900px) {
+  .mobile-menu { display: none; }
+}

@@ -1,0 +1,136 @@
+{
+  "$note": "EXTENSÕES DO CÓDIGO — estes tokens NÃO existem no Figma. Foram criados porque o arquivo não define espaçamento, raio, borda, sombra, foco nem movimento. Seguem a mesma convenção (Primitive com valores, Semantic com aliases →). Se forem aprovados, recrie-os no Figma com os mesmos nomes.",
+  "collections": {
+    "Typography / Semantic (override do código)": {
+      "$note": "Decisão de 25/09/2026: o site usa somente Outfit. Substitui font-family e font-weight de Display e Heading do Figma (que apontam para Righteous Regular). Tamanhos e alturas de linha continuam os do Figma.",
+      "override": true,
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "Display/Large/font-family": "→ font-family/Outfit",
+        "Display/Large/font-weight": "→ font-weight/bold",
+        "Display/Small/font-family": "→ font-family/Outfit",
+        "Display/Small/font-weight": "→ font-weight/bold",
+        "Heading/H1/font-family": "→ font-family/Outfit",
+        "Heading/H1/font-weight": "→ font-weight/bold",
+        "Heading/H2/font-family": "→ font-family/Outfit",
+        "Heading/H2/font-weight": "→ font-weight/bold",
+        "Heading/H3/font-family": "→ font-family/Outfit",
+        "Heading/H3/font-weight": "→ font-weight/semibold",
+        "Heading/H4/font-family": "→ font-family/Outfit",
+        "Heading/H4/font-weight": "→ font-weight/semibold",
+        "Heading/H5/font-family": "→ font-family/Outfit",
+        "Heading/H5/font-weight": "→ font-weight/semibold",
+        "Heading/H6/font-family": "→ font-family/Outfit",
+        "Heading/H6/font-weight": "→ font-weight/semibold"
+      }
+    },
+    "Space / Primitive": {
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "space/0": 0,
+        "space/4": 4,
+        "space/8": 8,
+        "space/12": 12,
+        "space/16": 16,
+        "space/20": 20,
+        "space/24": 24,
+        "space/32": 32,
+        "space/40": 40,
+        "space/48": 48,
+        "space/64": 64,
+        "space/80": 80,
+        "space/96": 96,
+        "space/128": 128,
+        "space/160": 160
+      }
+    },
+    "Space / Semantic": {
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "Space/Gutter-mobile": "→ space/20",
+        "Space/Gutter-tablet": "→ space/40",
+        "Space/Gutter-desktop": "→ space/64",
+        "Space/Stack-tight": "→ space/8",
+        "Space/Stack-default": "→ space/16",
+        "Space/Stack-loose": "→ space/32",
+        "Space/Section-mobile": "→ space/80",
+        "Space/Section-desktop": "→ space/160"
+      }
+    },
+    "Shape / Primitive": {
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "radius/0": 0,
+        "radius/8": 8,
+        "radius/12": 12,
+        "radius/20": 20,
+        "radius/32": 32,
+        "radius/full": 999,
+        "border-width/1": 1,
+        "border-width/2": 2
+      }
+    },
+    "Shape / Semantic": {
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "Radius/Control": "→ radius/full",
+        "Radius/Field": "→ radius/12",
+        "Radius/Media": "→ radius/20",
+        "Radius/Block": "→ radius/32",
+        "Border/Hairline": "→ border-width/1",
+        "Border/Focus": "→ border-width/2"
+      }
+    },
+    "Color / Semantic (extensão)": {
+      "modes": [
+        "Light",
+        "Dark"
+      ],
+      "variables": {
+        "Color/On-primary": {
+          "Light": "→ base/white",
+          "Dark": "→ base/white"
+        },
+        "Color/On-primary-secondary": {
+          "Light": "→ brand/100",
+          "Dark": "→ brand/100"
+        },
+        "Color/Focus-ring": {
+          "Light": "→ brand/600",
+          "Dark": "→ brand/300"
+        },
+        "Color/Selection": {
+          "Light": "→ brand/100",
+          "Dark": "→ brand/800"
+        },
+        "Color/Shadow": {
+          "Light": "→ neutral/950",
+          "Dark": "→ base/black"
+        }
+      }
+    },
+    "Motion / Primitive (fora do DS)": {
+      "$note": "Valores de animação configuráveis à parte, como o brief permite.",
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "duration/150": 150,
+        "duration/350": 350,
+        "duration/600": 600,
+        "easing/out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "easing/in-out": "cubic-bezier(0.65, 0, 0.35, 1)"
+      }
+    }
+  }
+}

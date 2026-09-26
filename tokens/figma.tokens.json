@@ -1,0 +1,731 @@
+{
+  "$source": "Figma · PORTIFÓLIO (piyW12d3fVOGIyEcmxFqd2) · variáveis locais lidas via Plugin API em 2026-09-25",
+  "$note": "Espelho fiel do Figma. Não edite à mão: nomes, valores, modos e aliases (→) devem continuar iguais ao arquivo. Adições que não existem no Figma ficam em extensions.tokens.json.",
+  "collections": {
+    "Color / Primitive": {
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "brand/50": {
+          "type": "COLOR",
+          "Default": "#eef2ff"
+        },
+        "brand/100": {
+          "type": "COLOR",
+          "Default": "#e0e7ff"
+        },
+        "brand/200": {
+          "type": "COLOR",
+          "Default": "#c7d2fe"
+        },
+        "brand/300": {
+          "type": "COLOR",
+          "Default": "#a5b4fc"
+        },
+        "brand/400": {
+          "type": "COLOR",
+          "Default": "#818cf8"
+        },
+        "brand/500": {
+          "type": "COLOR",
+          "Default": "#4f62ff"
+        },
+        "brand/600": {
+          "type": "COLOR",
+          "Default": "#1236ff"
+        },
+        "brand/700": {
+          "type": "COLOR",
+          "Default": "#0f2bd6"
+        },
+        "brand/800": {
+          "type": "COLOR",
+          "Default": "#1226ad"
+        },
+        "brand/900": {
+          "type": "COLOR",
+          "Default": "#142487"
+        },
+        "brand/950": {
+          "type": "COLOR",
+          "Default": "#0b1350"
+        },
+        "neutral/50": {
+          "type": "COLOR",
+          "Default": "#f4f4f0"
+        },
+        "neutral/100": {
+          "type": "COLOR",
+          "Default": "#ecece7"
+        },
+        "neutral/200": {
+          "type": "COLOR",
+          "Default": "#e3e3dd"
+        },
+        "neutral/300": {
+          "type": "COLOR",
+          "Default": "#d8d8d2"
+        },
+        "neutral/400": {
+          "type": "COLOR",
+          "Default": "#b5b5ae"
+        },
+        "neutral/500": {
+          "type": "COLOR",
+          "Default": "#898983"
+        },
+        "neutral/600": {
+          "type": "COLOR",
+          "Default": "#666660"
+        },
+        "neutral/700": {
+          "type": "COLOR",
+          "Default": "#50504c"
+        },
+        "neutral/800": {
+          "type": "COLOR",
+          "Default": "#383836"
+        },
+        "neutral/900": {
+          "type": "COLOR",
+          "Default": "#292928"
+        },
+        "neutral/950": {
+          "type": "COLOR",
+          "Default": "#202020"
+        },
+        "base/white": {
+          "type": "COLOR",
+          "Default": "#ffffff"
+        },
+        "base/black": {
+          "type": "COLOR",
+          "Default": "#000000"
+        }
+      }
+    },
+    "Color / Semantic": {
+      "modes": [
+        "Light",
+        "Dark"
+      ],
+      "variables": {
+        "Color/Background": {
+          "type": "COLOR",
+          "Light": "→ neutral/50",
+          "Dark": "→ neutral/950"
+        },
+        "Color/Background-border": {
+          "type": "COLOR",
+          "Light": "→ neutral/300",
+          "Dark": "→ neutral/700"
+        },
+        "Color/Surface-Primary": {
+          "type": "COLOR",
+          "Light": "→ base/white",
+          "Dark": "→ neutral/900"
+        },
+        "Color/Surface-Primary-Border": {
+          "type": "COLOR",
+          "Light": "→ neutral/300",
+          "Dark": "→ neutral/700"
+        },
+        "Color/Surface-Secondary": {
+          "type": "COLOR",
+          "Light": "→ neutral/100",
+          "Dark": "→ neutral/800"
+        },
+        "Color/Surface-Secondary-Border": {
+          "type": "COLOR",
+          "Light": "→ neutral/400",
+          "Dark": "→ neutral/600"
+        },
+        "Color/Text-primary": {
+          "type": "COLOR",
+          "Light": "→ neutral/950",
+          "Dark": "→ neutral/50"
+        },
+        "Color/Text-Secondary": {
+          "type": "COLOR",
+          "Light": "→ neutral/600",
+          "Dark": "→ neutral/300"
+        },
+        "Color/Text-disabled": {
+          "type": "COLOR",
+          "Light": "→ neutral/500",
+          "Dark": "→ neutral/500"
+        },
+        "Color/Text-special": {
+          "type": "COLOR",
+          "Light": "→ brand/700",
+          "Dark": "→ brand/300"
+        },
+        "Color/Primary-default": {
+          "type": "COLOR",
+          "Light": "→ brand/600",
+          "Dark": "→ brand/500"
+        },
+        "Color/Primary-hovered": {
+          "type": "COLOR",
+          "Light": "→ brand/700",
+          "Dark": "→ brand/400"
+        },
+        "Color/Secondary-default": {
+          "type": "COLOR",
+          "Light": "→ neutral/950",
+          "Dark": "→ neutral/50"
+        },
+        "Color/Secondary-hovered": {
+          "type": "COLOR",
+          "Light": "→ neutral/800",
+          "Dark": "→ neutral/200"
+        }
+      }
+    },
+    "Typography / Primitive": {
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "font-family/Outfit": {
+          "type": "STRING",
+          "Default": "Outfit"
+        },
+        "font-family/Righteous": {
+          "type": "STRING",
+          "Default": "Righteous"
+        },
+        "font-weight/regular": {
+          "type": "STRING",
+          "Default": "Regular"
+        },
+        "font-weight/medium": {
+          "type": "STRING",
+          "Default": "Medium"
+        },
+        "font-weight/semibold": {
+          "type": "STRING",
+          "Default": "SemiBold"
+        },
+        "font-weight/bold": {
+          "type": "STRING",
+          "Default": "Bold"
+        },
+        "font-size/12": {
+          "type": "FLOAT",
+          "Default": 12
+        },
+        "font-size/14": {
+          "type": "FLOAT",
+          "Default": 14
+        },
+        "font-size/16": {
+          "type": "FLOAT",
+          "Default": 16
+        },
+        "font-size/18": {
+          "type": "FLOAT",
+          "Default": 18
+        },
+        "font-size/20": {
+          "type": "FLOAT",
+          "Default": 20
+        },
+        "font-size/24": {
+          "type": "FLOAT",
+          "Default": 24
+        },
+        "font-size/28": {
+          "type": "FLOAT",
+          "Default": 28
+        },
+        "font-size/32": {
+          "type": "FLOAT",
+          "Default": 32
+        },
+        "font-size/40": {
+          "type": "FLOAT",
+          "Default": 40
+        },
+        "font-size/48": {
+          "type": "FLOAT",
+          "Default": 48
+        },
+        "font-size/56": {
+          "type": "FLOAT",
+          "Default": 56
+        },
+        "line-height/16": {
+          "type": "FLOAT",
+          "Default": 16
+        },
+        "line-height/20": {
+          "type": "FLOAT",
+          "Default": 20
+        },
+        "line-height/24": {
+          "type": "FLOAT",
+          "Default": 24
+        },
+        "line-height/26": {
+          "type": "FLOAT",
+          "Default": 26
+        },
+        "line-height/28": {
+          "type": "FLOAT",
+          "Default": 28
+        },
+        "line-height/32": {
+          "type": "FLOAT",
+          "Default": 32
+        },
+        "line-height/36": {
+          "type": "FLOAT",
+          "Default": 36
+        },
+        "line-height/40": {
+          "type": "FLOAT",
+          "Default": 40
+        },
+        "line-height/48": {
+          "type": "FLOAT",
+          "Default": 48
+        },
+        "line-height/56": {
+          "type": "FLOAT",
+          "Default": 56
+        },
+        "line-height/64": {
+          "type": "FLOAT",
+          "Default": 64
+        }
+      }
+    },
+    "Typography / Semantic": {
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "Display/Large/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/56"
+        },
+        "Display/Large/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/64"
+        },
+        "Display/Large/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Display/Large/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Righteous"
+        },
+        "Display/Small/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/48"
+        },
+        "Display/Small/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/56"
+        },
+        "Display/Small/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Display/Small/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Righteous"
+        },
+        "Heading/H1/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/40"
+        },
+        "Heading/H1/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/48"
+        },
+        "Heading/H1/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Heading/H1/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Righteous"
+        },
+        "Heading/H2/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/32"
+        },
+        "Heading/H2/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/40"
+        },
+        "Heading/H2/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Heading/H2/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Righteous"
+        },
+        "Heading/H3/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/28"
+        },
+        "Heading/H3/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/36"
+        },
+        "Heading/H3/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Heading/H3/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Righteous"
+        },
+        "Heading/H4/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/24"
+        },
+        "Heading/H4/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/32"
+        },
+        "Heading/H4/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Heading/H4/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Righteous"
+        },
+        "Heading/H5/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/20"
+        },
+        "Heading/H5/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/28"
+        },
+        "Heading/H5/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Heading/H5/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Righteous"
+        },
+        "Heading/H6/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/18"
+        },
+        "Heading/H6/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/26"
+        },
+        "Heading/H6/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Heading/H6/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Righteous"
+        },
+        "Body/Large/Regular/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/18"
+        },
+        "Body/Large/Regular/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/28"
+        },
+        "Body/Large/Regular/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Body/Large/Regular/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Body/Large/Medium/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/18"
+        },
+        "Body/Large/Medium/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/28"
+        },
+        "Body/Large/Medium/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/medium"
+        },
+        "Body/Large/Medium/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Body/Medium/Regular/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/16"
+        },
+        "Body/Medium/Regular/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/24"
+        },
+        "Body/Medium/Regular/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Body/Medium/Regular/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Body/Medium/Medium/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/16"
+        },
+        "Body/Medium/Medium/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/24"
+        },
+        "Body/Medium/Medium/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/medium"
+        },
+        "Body/Medium/Medium/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Body/Small/Regular/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/14"
+        },
+        "Body/Small/Regular/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/20"
+        },
+        "Body/Small/Regular/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Body/Small/Regular/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Body/Small/Medium/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/14"
+        },
+        "Body/Small/Medium/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/20"
+        },
+        "Body/Small/Medium/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/medium"
+        },
+        "Body/Small/Medium/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Label/Medium/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/14"
+        },
+        "Label/Medium/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/20"
+        },
+        "Label/Medium/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/semibold"
+        },
+        "Label/Medium/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Label/Small/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/12"
+        },
+        "Label/Small/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/16"
+        },
+        "Label/Small/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/semibold"
+        },
+        "Label/Small/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Caption/Regular/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/12"
+        },
+        "Caption/Regular/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/16"
+        },
+        "Caption/Regular/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/regular"
+        },
+        "Caption/Regular/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        },
+        "Button/Default/font-size": {
+          "type": "FLOAT",
+          "Default": "→ font-size/16"
+        },
+        "Button/Default/line-height": {
+          "type": "FLOAT",
+          "Default": "→ line-height/24"
+        },
+        "Button/Default/font-weight": {
+          "type": "STRING",
+          "Default": "→ font-weight/semibold"
+        },
+        "Button/Default/font-family": {
+          "type": "STRING",
+          "Default": "→ font-family/Outfit"
+        }
+      }
+    }
+  },
+  "textStyles": {
+    "Display/Large": {
+      "fontFamily": "Righteous",
+      "fontSize": 56,
+      "lineHeight": 64,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Display/Small": {
+      "fontFamily": "Righteous",
+      "fontSize": 48,
+      "lineHeight": 56,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Heading/H1": {
+      "fontFamily": "Righteous",
+      "fontSize": 40,
+      "lineHeight": 48,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Heading/H2": {
+      "fontFamily": "Righteous",
+      "fontSize": 32,
+      "lineHeight": 40,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Heading/H3": {
+      "fontFamily": "Righteous",
+      "fontSize": 28,
+      "lineHeight": 36,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Heading/H4": {
+      "fontFamily": "Righteous",
+      "fontSize": 24,
+      "lineHeight": 32,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Heading/H5": {
+      "fontFamily": "Righteous",
+      "fontSize": 20,
+      "lineHeight": 28,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Heading/H6": {
+      "fontFamily": "Righteous",
+      "fontSize": 18,
+      "lineHeight": 26,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Body/Large/Regular": {
+      "fontFamily": "Outfit",
+      "fontSize": 18,
+      "lineHeight": 28,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Body/Large/Medium": {
+      "fontFamily": "Outfit",
+      "fontSize": 18,
+      "lineHeight": 28,
+      "weight": "medium",
+      "letterSpacing": "0%"
+    },
+    "Body/Medium/Regular": {
+      "fontFamily": "Outfit",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Body/Medium/Medium": {
+      "fontFamily": "Outfit",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "weight": "medium",
+      "letterSpacing": "0%"
+    },
+    "Body/Small/Regular": {
+      "fontFamily": "Outfit",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Body/Small/Medium": {
+      "fontFamily": "Outfit",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "weight": "medium",
+      "letterSpacing": "0%"
+    },
+    "Label/Medium": {
+      "fontFamily": "Outfit",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "weight": "semibold",
+      "letterSpacing": "0%"
+    },
+    "Label/Small": {
+      "fontFamily": "Outfit",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "weight": "semibold",
+      "letterSpacing": "0%"
+    },
+    "Caption/Regular": {
+      "fontFamily": "Outfit",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "weight": "regular",
+      "letterSpacing": "0%"
+    },
+    "Button/Default": {
+      "fontFamily": "Outfit",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "weight": "semibold",
+      "letterSpacing": "0%"
+    }
+  },
+  "effectStyles": {},
+  "components": {}
+}

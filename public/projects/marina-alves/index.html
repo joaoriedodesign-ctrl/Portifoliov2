@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marina Alves | Mídia Kit — Skincare &amp; Rotina Real</title>
+  <meta name="description" content="Mídia kit da Marina Alves, influenciadora de skincare acessível e rotina real em Curitiba. 82 mil seguidores no Instagram, 1,2M de alcance mensal e pacotes para marcas.">
+  <meta name="theme-color" content="#d63f69">
+  <!-- Declara suporte a "light dark" (mas o CSS mantém o tema claro nos dois casos).
+       É esse sinal que faz Chrome, WebViews (navegador interno do Instagram/WhatsApp) e o
+       Samsung Internet com "tema escuro do site" NÃO escurecerem a página automaticamente. -->
+  <meta name="color-scheme" content="light dark">
+
+  <!-- Domínio atual (Hostinger). Ao trocar para o domínio definitivo, substitua em todas as URLs abaixo e no JSON-LD -->
+  <link rel="canonical" href="https://floralwhite-pony-891071.hostingersite.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Marina Alves | Mídia Kit">
+  <meta property="og:title" content="Marina Alves | Mídia Kit — Skincare &amp; Rotina Real">
+  <meta property="og:description" content="Skincare acessível e rotina real de mulher que trabalha fora. Conheça números, audiência e pacotes para marcas.">
+  <meta property="og:url" content="https://floralwhite-pony-891071.hostingersite.com/">
+  <meta property="og:image" content="https://floralwhite-pony-891071.hostingersite.com/assets/img/og-image.jpg">
+  <meta property="og:image:secure_url" content="https://floralwhite-pony-891071.hostingersite.com/assets/img/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Marina Alves — Influenciadora de Skincare &amp; Rotina Real">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://floralwhite-pony-891071.hostingersite.com/assets/img/og-image.jpg">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.tiktok.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Instrument+Sans:wght@400;500;700&family=Instrument+Serif&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/img/hero-bg-mobile.webp" media="(max-width: 899px)">
+  <link rel="preload" as="image" href="assets/img/hero-bg-1440.webp" imagesrcset="assets/img/hero-bg-1440.webp 1440w, assets/img/hero-bg-2880.webp 2880w" imagesizes="100vw" media="(min-width: 900px)">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Animações são progressive enhancement: só ligam se o JS rodar e se o usuário não pediu movimento reduzido -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduce && 'IntersectionObserver' in window) {
+        d.classList.add('js-anim');
+        setTimeout(function () { if (!window.__maReady) d.classList.remove('js-anim'); }, 3000);
+      }
+      d.classList.add('js');
+
+      // Tema escuro próprio SOMENTE para o Samsung Internet em modo escuro.
+      // O Samsung força um escurecimento automático que estraga as cores; com a
+      // página já escura, ele não tem o que inverter. Nos outros navegadores o site é sempre claro.
+      if (/SamsungBrowser/i.test(navigator.userAgent) && window.matchMedia) {
+        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+        var apply = function () { d.classList.toggle('samsung-dark', mq.matches); };
+        apply();
+        if (mq.addEventListener) mq.addEventListener('change', apply);
+        else if (mq.addListener) mq.addListener(apply);
+      }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marina Alves",
+    "jobTitle": "Influenciadora de Skincare & Rotina Real",
+    "address": { "@type": "PostalAddress", "addressLocality": "Curitiba", "addressRegion": "PR", "addressCountry": "BR" },
+    "email": "mailto:contato@marinaalves.com.br",
+    "url": "https://floralwhite-pony-891071.hostingersite.com/",
+    "sameAs": ["https://www.instagram.com/marinaalves", "https://www.tiktok.com/@marinaalves"]
+  }
+  </script>
+</head>
+<body>
+  <!-- Sprite de ícones: inline para herdar currentColor -->
+  <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-whatsapp" viewBox="0 0 24 24">
+      <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M15.3083 0.442018C14.529 0.234366 12.5569 -0.0946402 11.7854 0.02582C8.35019 0.293951 5.52995 1.53013 3.25579 4.18631C1.22612 6.57585 0.230016 9.67674 0.487643 12.8035C0.644243 14.6296 1.21827 16.3952 2.16525 17.9636L0.759275 21.9587C0.715528 22.082 0.664691 22.23 0.609468 22.3909C0.421712 22.9379 0.183195 23.6326 0 24C0.434006 23.8352 0.971073 23.6795 1.45891 23.538C1.58765 23.5007 1.71297 23.4643 1.83205 23.4291L4.16224 22.7328C4.37208 22.6717 4.60403 22.5979 4.84377 22.5216C5.37521 22.3524 5.94484 22.1709 6.39645 22.0894L6.46575 22.1239C7.50384 22.6397 8.02986 22.9009 9.19939 23.219C12.2007 24.0268 15.3996 23.6048 18.0897 22.0462C23.7408 18.7969 25.6794 11.5776 22.4134 5.91933C20.8544 3.23038 18.3025 1.26309 15.3083 0.442018ZM11.7896 1.8932C12.3279 1.84126 13.2491 1.92031 13.7931 2.0083C16.4113 2.43721 18.7508 3.89346 20.294 6.05499C21.8162 8.17888 22.4374 10.8198 22.0219 13.401C21.5843 16.044 20.1097 18.4022 17.9266 19.9503C15.915 21.3845 13.2261 22.0557 10.7846 21.6489C9.84725 21.5808 8.59865 21.1217 7.75123 20.698C7.58274 20.6137 7.41855 20.5188 7.25251 20.4229C7.04347 20.3022 6.83149 20.1797 6.60428 20.0745C5.6286 20.3246 3.98976 20.8134 3.03338 21.1294C3.31785 20.201 3.86588 18.6627 4.2279 17.7495C4.11919 17.6113 3.94432 17.3171 3.81933 17.1067L3.81484 17.0993C3.78926 17.0562 3.76586 17.0168 3.74566 16.9833C2.88129 15.5481 2.45525 14.1454 2.33486 12.478C2.15392 9.86105 3.02131 7.27965 4.74522 5.30482C6.59578 3.16831 9.01112 2.08774 11.7896 1.8932ZM9.44237 6.61627C9.12032 6.3979 8.80234 6.2255 8.41826 6.24397C7.58613 6.68301 6.78864 7.9173 6.33044 8.74305C6.66704 10.9423 8.63157 13.9467 10.4083 15.2362C11.9129 16.3283 14.3466 17.4598 16.1992 17.5335C16.6874 17.3195 17.7913 16.2087 18.1259 15.7876L18.167 15.7283C18.3142 15.5173 18.5251 15.215 18.4604 14.9763C18.2712 14.2787 17.4446 13.5799 16.8839 13.1975C16.2107 12.7384 15.4449 12.3654 14.9298 13.222C14.8712 13.3194 14.8141 13.4267 14.7554 13.5368C14.5323 13.9557 14.2868 14.4164 13.8564 14.5347C13.4339 14.6436 12.8857 14.3367 12.5398 14.1098C12.1274 13.8392 11.7511 13.5188 11.383 13.19C11.3147 13.1291 11.2449 13.0676 11.1743 13.0054C10.5381 12.4454 9.83751 11.8286 9.60296 11.0022C9.54754 10.807 9.61322 10.5508 9.72845 10.3942C9.84991 10.1997 10.1 10.0175 10.3603 9.82778C10.8141 9.49709 11.2987 9.14395 11.1862 8.664C11.0048 7.89099 10.0752 7.04558 9.44237 6.61627Z"/>
+    </symbol>
+    <symbol id="i-pdf" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10">
+        <path d="M4 9H11V2"/>
+        <path d="M4 11V9.07843C4 8.54799 4.21071 8.03929 4.58579 7.66421L9.66421 2.58579C10.0393 2.21071 10.548 2 11.0784 2H18C19.1046 2 20 2.89543 20 4V11" stroke-linecap="square"/>
+        <path d="M2 22V15H4.5C5.88071 15 7 16.1193 7 17.5C7 18.8807 5.88071 20 4.5 20H2.5" stroke-linecap="square"/>
+        <path d="M10 15V22H11.5C13.433 22 15 20.433 15 18.5C15 16.567 13.433 15 11.5 15H10Z" stroke-linecap="square"/>
+        <path d="M18 22V15H22M21 18.5H18.5" stroke-linecap="square"/>
+      </g>
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 20 20">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M14.5837 5.41632H14.592M5.83302 1.66602H14.167C16.4684 1.66602 18.334 3.53164 18.334 5.83302V14.167C18.334 16.4684 16.4684 18.334 14.167 18.334H5.83302C3.53164 18.334 1.66602 16.4684 1.66602 14.167V5.83302C1.66602 3.53164 3.53164 1.66602 5.83302 1.66602ZM13.3334 9.47522C13.4362 10.1688 13.3178 10.8772 12.9948 11.4996C12.6719 12.1219 12.1609 12.6267 11.5346 12.9419C10.9083 13.2571 10.1985 13.3669 9.50622 13.2555C8.81395 13.1441 8.17443 12.8172 7.67862 12.3214C7.18281 11.8256 6.85596 11.1861 6.74457 10.4938C6.63317 9.80154 6.7429 9.09177 7.05814 8.46546C7.37338 7.83914 7.87809 7.32817 8.50047 7.00523C9.12285 6.68229 9.83122 6.56382 10.5248 6.66667C11.2323 6.77158 11.8873 7.10125 12.393 7.607C12.8988 8.11274 13.2285 8.76773 13.3334 9.47522Z"/>
+    </symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M14.1225 2.63702C14.5738 2.62607 15.0252 2.6385 15.4747 2.6272C15.5056 3.71458 15.9407 4.94008 16.6924 5.73696C17.4279 6.51653 18.4199 6.97553 19.4613 7.17545C19.6849 7.21838 19.9224 7.27237 20.1495 7.27925C20.164 8.31886 20.1515 9.39148 20.1511 10.4329C18.7744 10.3406 17.6954 10.1211 16.463 9.46187C16.1834 9.31231 15.8637 9.08031 15.6171 8.9574L15.6005 8.9492L15.5974 13.6474L15.5913 14.8879C15.5904 15.4908 15.603 16.024 15.4819 16.6212C15.3052 17.4995 14.936 18.3278 14.4011 19.0465C13.4777 20.2658 12.1152 21.0771 10.6032 21.3081C9.0532 21.5443 7.47318 21.1501 6.21603 20.2132C5.012 19.3171 4.15281 17.9164 3.93536 16.4278C3.84986 15.9925 3.8612 15.0223 3.92968 14.5752C4.17203 13.063 4.99833 11.7063 6.23078 10.7971C6.96987 10.2489 7.82752 9.88239 8.73446 9.72701C9.45508 9.59744 9.97689 9.61479 10.697 9.72486C10.7151 10.8552 10.6542 12.0353 10.6592 13.1793C9.69814 12.8449 8.61772 13.096 7.89053 13.8058C7.40798 14.2759 7.12928 14.9165 7.11438 15.5901C7.10265 16.3584 7.26375 16.849 7.76098 17.4379C9.1189 19.0459 11.7478 18.4291 12.3284 16.4402C12.4069 16.1716 12.3896 15.3432 12.3942 15.0293C12.4093 14.1136 12.4141 13.1976 12.4084 12.2818L12.4335 2.64588C12.9461 2.65771 13.6072 2.64752 14.1225 2.63702Z"/>
+    </symbol>
+    <symbol id="i-trending" viewBox="0 0 20 20">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M18.334 10.8332V5.83398H13.3336M18.334 5.83398L11.2501 12.9162L7.08312 8.75018L1.66602 14.166"/>
+    </symbol>
+    <symbol id="i-eye" viewBox="0 0 20 20">
+      <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M1.7181 9.71079C1.64865 9.89788 1.64865 10.1037 1.7181 10.2908C2.39452 11.9309 3.5427 13.3333 5.01708 14.32C6.49146 15.3068 8.22564 15.8336 9.99977 15.8336C11.7739 15.8336 13.5081 15.3068 14.9825 14.32C16.4568 13.3333 17.605 11.9309 18.2814 10.2908C18.3509 10.1037 18.3509 9.89788 18.2814 9.71079C17.605 8.07067 16.4568 6.66832 14.9825 5.68154C13.5081 4.69475 11.7739 4.16797 9.99977 4.16797C8.22564 4.16797 6.49146 4.69475 5.01708 5.68154C3.5427 6.66832 2.39452 8.07067 1.7181 9.71079Z"/>
+      <circle cx="10" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19.999 18.001C20.5513 18.001 20.999 18.4487 20.999 19.001C20.9988 19.5531 20.5512 20.001 19.999 20.001H4.00098C3.44881 20.001 3.00117 19.5531 3.00098 19.001C3.00098 18.4487 3.44869 18.001 4.00098 18.001H19.999ZM19.999 11C20.5513 11 20.999 11.4477 20.999 12C20.9989 12.5522 20.5512 13 19.999 13H4.00098C3.44875 13 3.00107 12.5522 3.00098 12C3.00098 11.4477 3.44869 11 4.00098 11H19.999ZM19.999 3.99902C20.5513 3.99902 20.999 4.44674 20.999 4.99902C20.999 5.55131 20.5513 5.99902 19.999 5.99902H4.00098C3.44869 5.99902 3.00098 5.55131 3.00098 4.99902C3.00098 4.44674 3.44869 3.99902 4.00098 3.99902H19.999Z"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 44 44">
+      <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M22.4587 19.4073L31.5323 10.3342C32.2484 9.61807 33.4086 9.61851 34.1247 10.3342C34.3969 10.6063 34.5652 10.9429 34.6296 11.2947C34.6833 11.5906 34.6654 11.8972 34.5759 12.1854C34.49 12.4567 34.3396 12.7118 34.1247 12.9267L25.0512 21.9998L34.1247 31.0733C34.5294 31.4784 34.7048 32.0258 34.6511 32.5544C34.6117 32.9604 34.4363 33.3552 34.1247 33.6658C33.4086 34.3815 32.2484 34.3815 31.5323 33.6658L22.4587 24.5927L13.3852 33.6662C12.669 34.3819 11.5089 34.3819 10.7927 33.6662C10.0766 32.9501 10.0766 31.789 10.7927 31.0733L19.8663 21.9998L10.7927 12.9267C10.4239 12.5569 10.2449 12.0682 10.2556 11.5834C10.2663 11.13 10.4454 10.6798 10.7927 10.3338C11.1365 9.99091 11.5805 9.81232 12.0316 9.798C12.5186 9.78233 13.0128 9.96092 13.3852 10.3338L22.4587 19.4073Z"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 18 18">
+      <path fill="currentColor" d="M9 1.5l2.2 4.6 5 .7-3.6 3.5.9 5L9 12.9l-4.5 2.4.9-5L1.8 6.8l5-.7L9 1.5z"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="#inicio" aria-label="Marina Alves — início">
+        <span class="brand__name">Marinaalves</span>
+        <span class="brand__tag">| Mídia Kit</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Principal">
+        <ul>
+          <li><a href="#audiencia">Audiência</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#engajamento">Engajamento</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary btn--wa header-cta" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20Marina!%20Vi%20seu%20m%C3%ADdia%20kit%20e%20quero%20conversar%20sobre%20uma%20parceria." target="_blank" rel="noopener">
+        <svg class="icon" width="24" height="24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        Fale comigo
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <svg class="icon" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ MENU MOBILE ============ -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <nav aria-label="Menu mobile">
+      <ul class="mobile-menu__links">
+        <li><a href="#audiencia">Audiência</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#engajamento">Engajamento</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a class="btn btn--primary btn--lg" href="#servicos">Ver pacotes</a>
+      <a class="btn btn--outline btn--lg" href="assets/docs/marina-alves-media-kit.pdf" download>
+        Baixar mídia kit
+        <svg class="icon" width="24" height="24" aria-hidden="true"><use href="#i-pdf"/></svg>
+      </a>
+    </div>
+    <button class="mobile-menu__close" type="button" aria-label="Fechar menu">
+      <svg class="icon" width="44" height="44" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+
+  <main id="conteudo" tabindex="-1">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <picture class="hero__bg" aria-hidden="true">
+        <source media="(max-width: 899px)" srcset="assets/img/hero-bg-mobile.webp">
+        <img src="assets/img/hero-bg-1440.webp" srcset="assets/img/hero-bg-1440.webp 1440w, assets/img/hero-bg-2880.webp 2880w" sizes="100vw" alt="" width="1440" height="690" fetchpriority="high">
+      </picture>
+
+      <div class="hero__inner">
+        <div class="hero__content">
+          <div class="hero__text">
+            <p class="eyebrow">Influenciadora de Skincare &amp; Rotina Real</p>
+            <h1 class="hero__title">Marina Alves</h1>
+            <p class="hero__lead">Skincare acessível e rotina real de mulher que trabalha fora. Conteúdo honesto e focado na praticidade diária.</p>
+          </div>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--hero" href="#servicos">Ver pacotes</a>
+            <a class="btn btn--outline btn--hero" href="assets/docs/marina-alves-media-kit.pdf" download>
+              Baixar mídia kit
+              <svg class="icon" width="24" height="24" aria-hidden="true"><use href="#i-pdf"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="video">
+            <iframe src="https://www.tiktok.com/player/v1/7671402543326530833?play_button=1&amp;progress_bar=0&amp;volume_control=0&amp;fullscreen_button=0&amp;timestamp=0&amp;music_info=0&amp;description=0&amp;rel=0&amp;native_context_menu=0&amp;closed_caption=0" title="Vídeo de apresentação da Marina Alves (TikTok)" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+      </div>
+    </section>
+
+    <!-- ============ MÉTRICAS ============ -->
+    <section class="section metrics" id="numeros" aria-labelledby="metrics-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">Presença digital</p>
+          <h2 class="h2" id="metrics-title">Meus números em constante evolução</h2>
+        </header>
+
+        <ul class="metrics__grid" data-stagger>
+          <li class="metric-card" data-reveal>
+            <div class="metric-card__top">
+              <span class="icon-bubble"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-instagram"/></svg></span>
+              <span class="metric-card__label">Instagram</span>
+            </div>
+            <p class="metric-card__value" data-count="82" data-suffix=" mil">82 mil</p>
+            <p class="metric-card__desc">4,8% taxa de engajamento ativa</p>
+          </li>
+          <li class="metric-card" data-reveal>
+            <div class="metric-card__top">
+              <span class="icon-bubble"><svg class="icon" width="24" height="24" aria-hidden="true"><use href="#i-tiktok"/></svg></span>
+              <span class="metric-card__label">TikTok</span>
+            </div>
+            <p class="metric-card__value" data-count="41" data-suffix=" mil">41 mil</p>
+            <p class="metric-card__desc">Média de 60 mil visualizações por vídeo</p>
+          </li>
+          <li class="metric-card" data-reveal>
+            <div class="metric-card__top">
+              <span class="icon-bubble"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-trending"/></svg></span>
+              <span class="metric-card__label">Alcance Mensal</span>
+            </div>
+            <p class="metric-card__value" data-count="1.2" data-decimals="1" data-suffix="M">1,2M</p>
+            <p class="metric-card__desc">Contas únicas alcançadas mensalmente</p>
+          </li>
+          <li class="metric-card" data-reveal>
+            <div class="metric-card__top">
+              <span class="icon-bubble"><svg class="icon" width="20" height="20" aria-hidden="true"><use href="#i-eye"/></svg></span>
+              <span class="metric-card__label">Stories</span>
+            </div>
+            <p class="metric-card__value" data-count="9" data-suffix=" mil">9 mil</p>
+            <p class="metric-card__desc">Visualizações médias em 24h</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE ============ -->
+    <section class="section about" id="sobre" aria-labelledby="about-title">
+      <div class="container about__inner">
+        <figure class="about__media">
+          <img src="assets/img/marina-alves-sobre.webp" alt="Marina Alves de blazer claro e óculos escuros em um campo ao entardecer" width="780" height="780" loading="lazy" decoding="async">
+        </figure>
+        <div class="about__content">
+          <header class="section-head">
+            <p class="eyebrow">Conheça a Marina</p>
+            <h2 class="h2" id="about-title">Estética limpa, rotina prática e muita conversa real</h2>
+          </header>
+          <p class="about__text">Oi, eu sou a Marina! Falo de skincare e rotina real pra quem não tem 2 horas por dia pra se cuidar. Testo tudo antes de indicar, e minha audiência sabe disso: quando eu recomendo, ela compra. Aqui você encontra conteúdo honesto, estética limpa e uma comunidade que conversa de verdade.</p>
+          <dl class="about__facts">
+            <div class="fact">
+              <dt>Idade</dt>
+              <dd>37 anos</dd>
+            </div>
+            <div class="fact">
+              <dt>Localização</dt>
+              <dd>Curitiba, PR</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AUDIÊNCIA ============ -->
+    <section class="section audience" id="audiencia" aria-labelledby="audience-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Quem me acompanha</p>
+          <h2 class="h2" id="audience-title">Comunidade qualificada e engajada</h2>
+        </header>
+
+        <div class="audience__grid">
+          <article class="card audience-card" data-reveal>
+            <h3 class="h3">Gênero &amp; Idade</h3>
+            <ul class="bars">
+              <li class="bar" data-pct="81">
+                <div class="bar__row"><span>Mulheres</span><span class="bar__pct">81%</span></div>
+                <div class="bar__track" role="presentation"><span class="bar__fill" style="--pct:81%"></span></div>
+              </li>
+              <li class="bar" data-pct="19">
+                <div class="bar__row"><span>Homens</span><span class="bar__pct">19%</span></div>
+                <div class="bar__track" role="presentation"><span class="bar__fill" style="--pct:19%"></span></div>
+              </li>
+            </ul>
+            <hr class="divider">
+            <ul class="bars">
+              <li class="bar" data-pct="28">
+                <div class="bar__row"><span>18–24 anos</span><span class="bar__pct">28%</span></div>
+                <div class="bar__track" role="presentation"><span class="bar__fill" style="--pct:28%"></span></div>
+              </li>
+              <li class="bar" data-pct="47">
+                <div class="bar__row"><span>25–34 anos</span><span class="bar__pct">47%</span></div>
+                <div class="bar__track" role="presentation"><span class="bar__fill" style="--pct:47%"></span></div>
+              </li>
+              <li class="bar" data-pct="18">
+                <div class="bar__row"><span>35–44 anos</span><span class="bar__pct">18%</span></div>
+                <div class="bar__track" role="presentation"><span class="bar__fill" style="--pct:18%"></span></div>
+              </li>
+            </ul>
+          </article>
+
+          <div class="audience__col">
+            <article class="card audience-card audience-card--tags" data-reveal>
+              <h3 class="h3">Principais Cidades</h3>
+              <ul class="chips chips--outline" data-stagger>
+                <li data-reveal>São Paulo</li>
+                <li data-reveal>Curitiba</li>
+                <li data-reveal>Belo Horizonte</li>
+                <li data-reveal>Rio de Janeiro</li>
+              </ul>
+            </article>
+            <article class="card audience-card audience-card--tags" data-reveal>
+              <h3 class="h3">Nossos Assuntos</h3>
+              <ul class="chips chips--soft" data-stagger>
+                <li data-reveal>Beleza</li>
+                <li data-reveal>Autocuidado</li>
+                <li data-reveal>Moda Básica</li>
+                <li data-reveal>Produtividade</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MELHORES CONTEÚDOS ============ -->
+    <section class="section best" id="engajamento" aria-labelledby="best-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">No Feed</p>
+          <h2 class="h2" id="best-title">Melhores conteúdos e engajamento</h2>
+        </header>
+      </div>
+      <ul class="best__list scroller" aria-label="Vídeos em destaque">
+        <li class="best__item">
+          <div class="video">
+            <iframe src="https://www.tiktok.com/player/v1/7671402543326530833?play_button=1&amp;progress_bar=0&amp;volume_control=0&amp;fullscreen_button=0&amp;timestamp=0&amp;music_info=0&amp;description=0&amp;rel=0&amp;native_context_menu=0&amp;closed_caption=0" title="Tutorial Skincare 3 Passos (TikTok)" loading="lazy" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="best__stat">140k views</p>
+          <h3 class="best__title">Tutorial Skincare 3 Passos</h3>
+        </li>
+        <li class="best__item">
+          <div class="video">
+            <iframe src="https://www.tiktok.com/player/v1/7671402543326530833?play_button=1&amp;progress_bar=0&amp;volume_control=0&amp;fullscreen_button=0&amp;timestamp=0&amp;music_info=0&amp;description=0&amp;rel=0&amp;native_context_menu=0&amp;closed_caption=0" title="Guia Protetor Solar Diário (TikTok)" loading="lazy" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="best__stat">12k salvos</p>
+          <h3 class="best__title">Guia Protetor Solar Diário</h3>
+        </li>
+        <li class="best__item">
+          <div class="video">
+            <iframe src="https://www.tiktok.com/player/v1/7671402543326530833?play_button=1&amp;progress_bar=0&amp;volume_control=0&amp;fullscreen_button=0&amp;timestamp=0&amp;music_info=0&amp;description=0&amp;rel=0&amp;native_context_menu=0&amp;closed_caption=0" title="Arrume-se comigo realista (TikTok)" loading="lazy" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="best__stat">85k views</p>
+          <h3 class="best__title">Arrume-se comigo realista</h3>
+        </li>
+        <li class="best__item">
+          <div class="video">
+            <iframe src="https://www.tiktok.com/player/v1/7671402543326530833?play_button=1&amp;progress_bar=0&amp;volume_control=0&amp;fullscreen_button=0&amp;timestamp=0&amp;music_info=0&amp;description=0&amp;rel=0&amp;native_context_menu=0&amp;closed_caption=0" title="Review honesto sérum ácido (TikTok)" loading="lazy" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="best__stat">9.5k curtidas</p>
+          <h3 class="best__title">Review honesto sérum ácido</h3>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ PARCERIAS ============ -->
+    <section class="section partners" id="parcerias" aria-labelledby="partners-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Resultados de Sucesso</p>
+          <h2 class="h2" id="partners-title">Quem já construiu histórias conosco</h2>
+        </header>
+      </div>
+      <ul class="partners__list scroller" data-autoscroll data-stagger aria-label="Depoimentos de marcas parceiras">
+        <li class="testimonial" data-reveal>
+          <div class="testimonial__head">
+            <span class="testimonial__avatar" aria-hidden="true"></span>
+            <div>
+              <p class="testimonial__brand">Bloom Cosméticos</p>
+              <p class="stars" role="img" aria-label="5 de 5 estrelas">
+                <svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg>
+              </p>
+            </div>
+          </div>
+          <blockquote class="testimonial__quote"><p>"Excelente retorno de conversão. Tivemos 1.200 cliques e o cupom de desconto foi usado 340 vezes em apenas 7 dias de campanha."</p></blockquote>
+        </li>
+        <li class="testimonial" data-reveal>
+          <div class="testimonial__head">
+            <span class="testimonial__avatar" aria-hidden="true"></span>
+            <div>
+              <p class="testimonial__brand">Nuvem Skin</p>
+              <p class="stars" role="img" aria-label="5 de 5 estrelas">
+                <svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg>
+              </p>
+            </div>
+          </div>
+          <blockquote class="testimonial__quote"><p>"O Reels produzido pela Marina obteve 210 mil visualizações reais, correspondendo a mais de 3 vezes a média orgânica da nossa marca."</p></blockquote>
+        </li>
+        <li class="testimonial" data-reveal>
+          <div class="testimonial__head">
+            <span class="testimonial__avatar" aria-hidden="true"></span>
+            <div>
+              <p class="testimonial__brand">Casa Linho</p>
+              <p class="stars" role="img" aria-label="5 de 5 estrelas">
+                <svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg><svg width="18" height="18" aria-hidden="true"><use href="#i-star"/></svg>
+              </p>
+            </div>
+          </div>
+          <blockquote class="testimonial__quote"><p>"Campanha de longo prazo de 3 meses. Os conteúdos criados (UGC) performaram tão bem que foram licenciados para nossos anúncios oficiais."</p></blockquote>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ SERVIÇOS ============ -->
+    <section class="section services" id="servicos" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head section-head--center">
+          <p class="eyebrow">Meus Serviços</p>
+          <h2 class="h2" id="services-title">Como podemos trabalhar juntos</h2>
+        </header>
+
+        <ul class="services__grid" data-stagger>
+          <li class="service" data-reveal>
+            <div class="service__info">
+              <span class="service__tag">REELS</span>
+              <h3 class="service__name">1x Reels no Instagram</h3>
+            </div>
+            <p class="service__price">R$ 1.800</p>
+            <a class="btn btn--outline-soft service__cta" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20Marina!%20Quero%20o%20pacote%201x%20Reels%20no%20Instagram%20(R%24%201.800)." target="_blank" rel="noopener">Quero este pacote</a>
+          </li>
+          <li class="service" data-reveal>
+            <div class="service__info">
+              <span class="service__tag">STORIES</span>
+              <h3 class="service__name">Combo 3 Stories com Link</h3>
+            </div>
+            <p class="service__price">R$ 900</p>
+            <a class="btn btn--outline-soft service__cta" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20Marina!%20Quero%20o%20pacote%20Combo%203%20Stories%20com%20Link%20(R%24%20900)." target="_blank" rel="noopener">Quero este pacote</a>
+          </li>
+          <li class="service" data-reveal>
+            <div class="service__info">
+              <span class="service__tag">TIKTOK</span>
+              <h3 class="service__name">1x Vídeo no TikTok</h3>
+            </div>
+            <p class="service__price">R$ 1.500</p>
+            <a class="btn btn--outline-soft service__cta" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20Marina!%20Quero%20o%20pacote%201x%20V%C3%ADdeo%20no%20TikTok%20(R%24%201.500)." target="_blank" rel="noopener">Quero este pacote</a>
+          </li>
+          <li class="service" data-reveal>
+            <div class="service__info">
+              <span class="service__tag">UGC</span>
+              <h3 class="service__name">Produção de Vídeo UGC</h3>
+            </div>
+            <p class="service__price">R$ 700</p>
+            <a class="btn btn--outline-soft service__cta" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20Marina!%20Quero%20o%20pacote%20Produ%C3%A7%C3%A3o%20de%20V%C3%ADdeo%20UGC%20(R%24%20700)." target="_blank" rel="noopener">Quero este pacote</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="packages-wrap">
+        <ul class="packages scroller" data-stagger aria-label="Pacotes completos">
+          <li class="package" data-reveal>
+            <div class="package__body">
+              <div class="package__head">
+                <p class="package__kicker">Pacote Inicial</p>
+                <h3 class="package__name">Pacote Prata</h3>
+              </div>
+              <ul class="package__list">
+                <li>1x Reels focado em experiência de uso</li>
+                <li>3x Stories em sequência com link de compra</li>
+                <li>Entrega de métricas em até 7 dias</li>
+              </ul>
+            </div>
+            <div class="package__foot">
+              <p class="package__price">R$ 2.400</p>
+              <a class="btn btn--outline-soft btn--block" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20Marina!%20Quero%20o%20Pacote%20Prata%20(R%24%202.400)." target="_blank" rel="noopener">Quero este pacote</a>
+            </div>
+          </li>
+          <li class="package package--featured" data-reveal>
+            <span class="package__badge">Mais pedido</span>
+            <div class="package__body">
+              <div class="package__head">
+                <p class="package__kicker">Campanha Completa</p>
+                <h3 class="package__name">Pacote Ouro</h3>
+              </div>
+              <ul class="package__list">
+                <li>2x Reels integrados na rotina de skincare</li>
+                <li>6x Stories distribuídos em 2 dias estratégicos</li>
+                <li>1x Vídeo dedicado no TikTok</li>
+                <li>Uso comercial básico para tráfego pago por 30 dias</li>
+              </ul>
+            </div>
+            <div class="package__foot">
+              <p class="package__price">R$ 5.200</p>
+              <a class="btn btn--primary btn--block btn--bold" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20Marina!%20Quero%20contratar%20o%20Pacote%20Ouro%20(R%24%205.200)." target="_blank" rel="noopener">Contratar Pacote Ouro</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="section contact" id="contato" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__inner">
+          <div class="contact__intro">
+            <h2 class="h3 contact__title" id="contact-title">Vamos construir algo incrível juntos?</h2>
+            <p class="contact__lead">Entre em contato para consultar datas disponíveis, enviar propostas de campanhas ou solicitar pacotes customizados.</p>
+            <p class="notice"><span class="notice__icon" aria-hidden="true">i</span>Dados e métricas atualizados oficialmente em setembro/2026.</p>
+          </div>
+
+          <dl class="contact__list">
+            <div class="contact__item">
+              <dt>E-mail</dt>
+              <dd><a href="mailto:contato@marinaalves.com.br">contato@marinaalves.com.br</a></dd>
+            </div>
+            <div class="contact__item">
+              <dt>WhatsApp</dt>
+              <dd><a href="https://wa.me/5541999999999" target="_blank" rel="noopener">+55 (41) 99999-9999</a></dd>
+            </div>
+            <div class="contact__item">
+              <dt>Redes Sociais</dt>
+              <dd><a href="https://www.instagram.com/marinaalves" target="_blank" rel="noopener">Instagram: @marinaalves</a></dd>
+              <dd><a href="https://www.tiktok.com/@marinaalves" target="_blank" rel="noopener">TikTok: @marinaalves</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© 2026 Marina Alves. Todos os direitos reservados.</p>
+      <p>Curitiba — PR, Brasil</p>
+    </div>
+  </footer>
+
+  <!-- Widget fixo (mobile) -->
+  <a class="wa-fab" href="https://wa.me/5541999999999?text=Ol%C3%A1%2C%20Marina!%20Vi%20seu%20m%C3%ADdia%20kit%20e%20quero%20conversar%20sobre%20uma%20parceria." target="_blank" rel="noopener" aria-label="Fale com a Marina pelo WhatsApp">
+    <svg width="28" height="28" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  </a>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
