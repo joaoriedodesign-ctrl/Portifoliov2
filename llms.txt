@@ -1,0 +1,63 @@
+# João Riedo — Product Designer
+
+> Design de produtos digitais, da estrutura à experiência. Product Designer na Multibet, com experiência anterior na Ana Gaming. Londrina, PR, Brasil.
+
+- E-mail: joaoriedodesign@gmail.com
+- Linkedin: https://www.linkedin.com/in/ri3do/
+- Behance: https://www.behance.net/ri3do
+- Dribbble: https://dribbble.com/ri3do
+- Idiomas / Languages: português, English
+
+## Páginas (português)
+- [João Riedo — Product Designer](https://joaoriedo.com/): Portfólio de João Riedo, Product Designer. Design de produtos digitais, da estrutura à experiência.
+- [Projetos — João Riedo](https://joaoriedo.com/projetos): Projetos de João Riedo: Design System Multi-tenant, Instituto MAIS, Dr. Carlos Mattos e Marina Alves.
+- [Sobre — João Riedo](https://joaoriedo.com/sobre): Trajetória, forma de trabalho, formação e diferenciais de João Riedo, Product Designer.
+- [Contato — João Riedo](https://joaoriedo.com/contato): Vamos conversar sobre o seu projeto? Envie uma mensagem para João Riedo pelo WhatsApp.
+
+## Projetos
+- [Instituto MAIS](https://joaoriedo.com/projetos/instituto-mais) — Site institucional, 2026: Clínica multidisciplinar em Londrina: 7 especialidades, profissionais e um caminho curto até o agendamento.
+- [Design System Multi-tenant](https://joaoriedo.com/projetos/multi-tenant-design-system) — Design System, 2026: Design system arquitetado do zero na Play4tune, hoje também em uso na Multibet e na Supernova, com automação de tema por tenant.
+- [Dr. Carlos Mattos](https://joaoriedo.com/projetos/dr-carlos-mattos) — Landing page, 2026: Consultório de psiquiatria em Curitiba, com toda a jornada levando a um único canal: o WhatsApp.
+- [Marina Alves](https://joaoriedo.com/projetos/marina-alves) — Mídia kit, 2026: Mídia kit online para uma persona de skincare — métricas, audiência e pacotes com contratação pelo WhatsApp.
+
+## Trajetória
+- Multibet — Product Designer (fev/2026–atual)
+- Ana Gaming — UX Designer (abr–dez/2025)
+- Alterra — Intercâmbio com foco no inglês (dez/2023–mar/2024)
+- Instituto ESPE — Supervisor de Design (set/2020–jul/2023)
+
+## Formação
+- Bacharelado em Design Gráfico — UniFil (2020–2022)
+- Técnico Integrado em Informática — IFPR (2015–2018)
+- Google UX Design Professional Certificate — Google (Coursera) ([Ver certificado](https://www.coursera.org/account/accomplishments/specialization/Y2WKA6Q7A19U))
+- Claude for Designers — Tera ([Ver certificado](https://credentials.somostera.com/d2a2aaf94c6cd04c9afdf55dcdadbebb))
+
+## Top skills
+Claude Cowork, Automação de Workflow, Design Tokens, Design Ops, iGaming & Sportsbook, Pesquisa de Mercado, Prototipagem de Alta Fidelidade
+
+## Pages (English)
+- [João Riedo — Product Designer](https://joaoriedo.com/en): Portfolio of João Riedo, Product Designer. Designing digital products, from structure to experience.
+- [Projects — João Riedo](https://joaoriedo.com/en/projects): Projects by João Riedo: Multi-tenant Design System, Instituto MAIS, Dr. Carlos Mattos and Marina Alves.
+- [About — João Riedo](https://joaoriedo.com/en/about): Background, way of working, education and strengths of João Riedo, Product Designer.
+- [Contact — João Riedo](https://joaoriedo.com/en/contact): Shall we talk about your project? Send João Riedo a message on WhatsApp.
+
+## Projects
+- [Instituto MAIS](https://joaoriedo.com/en/projects/instituto-mais) — Institutional website, 2026: Multidisciplinary clinic in Londrina: 7 specialties, practitioners and a short path to booking.
+- [Design System Multi-tenant](https://joaoriedo.com/en/projects/multi-tenant-design-system) — Design System, 2026: Design system architected from scratch at Play4tune, now also used by Multibet and Supernova, with per-tenant theme automation.
+- [Dr. Carlos Mattos](https://joaoriedo.com/en/projects/dr-carlos-mattos) — Landing page, 2026: Psychiatry practice in Curitiba, with the whole journey leading to a single channel: WhatsApp.
+- [Marina Alves](https://joaoriedo.com/en/projects/marina-alves) — Media kit, 2026: Online media kit for a skincare persona — metrics, audience and packages bookable on WhatsApp.
+
+## Experience
+- Multibet — Product Designer (Feb 2026–present)
+- Ana Gaming — UX Designer (Apr–Dec 2025)
+- Alterra — Exchange program focused on English (Dec 2023–Mar 2024)
+- Instituto ESPE — Design Supervisor (Sep 2020 — Jul 2023)
+
+## Education
+- Bachelor’s in Graphic Design — UniFil (2020–2022)
+- Integrated IT Technician — IFPR (2015–2018)
+- Google UX Design Professional Certificate — Google (Coursera) ([View certificate](https://www.coursera.org/account/accomplishments/specialization/Y2WKA6Q7A19U))
+- Claude for Designers — Tera ([View certificate](https://credentials.somostera.com/d2a2aaf94c6cd04c9afdf55dcdadbebb))
+
+## Top skills
+Claude Cowork, Workflow Automation, Design Tokens, Design Ops, iGaming & Sportsbook, Market Research, High-Fidelity Prototyping
