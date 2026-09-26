@@ -139,12 +139,17 @@ writeFileSync(join(dist, '_redirects'), redirects.map((r) => `${r.from} ${r.to} 
 mkdirSync(join(dist, 'projects'), { recursive: true });
 writeFileSync(join(dist, 'projects', '.htaccess'), `# Gerado por build.mjs — cópias dos sites dos clientes: fora do índice dos buscadores\n<IfModule mod_headers.c>\n  Header set X-Robots-Tag "noindex"\n</IfModule>\n`);
 writeFileSync(join(dist, '.htaccess'), `# Gerado por build.mjs
-Options -MultiViews
+Options -MultiViews -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 AddDefaultCharset UTF-8
 AddCharset UTF-8 .txt .xml .webmanifest
 RewriteEngine On
+
+# Quando o site é publicado a partir da raiz do repositório (Hostinger sem pasta de
+# saída), o código-fonte fica ao lado do site: nada disso pode ser acessado.
+RewriteRule ^(src|scripts|tokens|public|node_modules|dist|preview|\\.git)(/|$) - [R=404,L]
+RewriteRule ^(package(-lock)?\\.json|build\\.mjs|serve\\.mjs|[^/]+\\.md|\\.gitignore)$ - [R=404,L]
 
 # Um único endereço: HTTPS e sem www
 RewriteCond %{HTTPS} off [OR]

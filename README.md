@@ -60,10 +60,14 @@ Depois de publicar: cadastrar o domínio no Google Search Console e no Bing Webm
 
 ## Deploy na Hostinger (GitHub → Implantações)
 
-O repositório guarda o código-fonte; a Hostinger gera o site a cada push na `main`.
+O repositório guarda o código-fonte; a Hostinger roda o build a cada push na `main`.
+Como a implantação dela publica a **raiz** do repositório (sem opção de pasta de saída),
+`npm run build` gera o site em `dist/` e depois copia para a raiz (`scripts/publish-root.mjs`).
+Esses arquivos copiados estão no `.gitignore`, e o `.htaccess` bloqueia o acesso ao código-fonte.
 
 - Diretório raiz: `./`
 - Comando de instalação: `npm install`
 - Comando de build: `npm run build`
-- Diretório de saída: `dist`
 - Node: 22.x
+
+Localmente, prefira `npm run dev` (gera em `dist/` e abre o servidor, sem copiar para a raiz).

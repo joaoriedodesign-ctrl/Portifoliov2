@@ -2,3 +2,25 @@ node_modules/
 dist/
 .verify/
 preview/
+
+# Site gerado copiado para a raiz por scripts/publish-root.mjs (não versionar)
+/.htaccess
+/404.html
+/_redirects
+/apple-touch-icon.png
+/assets/
+/contato/
+/en/
+/favicon-192.png
+/favicon-32.png
+/fonts/
+/index.html
+/llms.txt
+/og/
+/projects/
+/projetos/
+/robots.txt
+/site.webmanifest
+/sitemap.xml
+/sobre/
+/vercel.json
