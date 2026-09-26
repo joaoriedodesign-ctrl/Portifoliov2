@@ -1,0 +1,250 @@
+/* ARQUIVO GERADO por scripts/build-tokens.mjs — não edite à mão.
+   Fonte: tokens/figma.tokens.json (espelho do Figma) + tokens/extensions.tokens.json.
+   Modo padrão: Light (direção visual clara). O modo Dark do Figma fica disponível em [data-theme="dark"]. */
+:root {
+  /* Figma · Color / Primitive */
+  --color-brand-50: #eef2ff;
+  --color-brand-100: #e0e7ff;
+  --color-brand-200: #c7d2fe;
+  --color-brand-300: #a5b4fc;
+  --color-brand-400: #818cf8;
+  --color-brand-500: #4f62ff;
+  --color-brand-600: #1236ff;
+  --color-brand-700: #0f2bd6;
+  --color-brand-800: #1226ad;
+  --color-brand-900: #142487;
+  --color-brand-950: #0b1350;
+  --color-neutral-50: #f4f4f0;
+  --color-neutral-100: #ecece7;
+  --color-neutral-200: #e3e3dd;
+  --color-neutral-300: #d8d8d2;
+  --color-neutral-400: #b5b5ae;
+  --color-neutral-500: #898983;
+  --color-neutral-600: #666660;
+  --color-neutral-700: #50504c;
+  --color-neutral-800: #383836;
+  --color-neutral-900: #292928;
+  --color-neutral-950: #202020;
+  --color-base-white: #ffffff;
+  --color-base-black: #000000;
+
+  /* Figma · Color / Semantic */
+  --color-background: var(--color-neutral-50);
+  --color-background-border: var(--color-neutral-300);
+  --color-surface-primary: var(--color-base-white);
+  --color-surface-primary-border: var(--color-neutral-300);
+  --color-surface-secondary: var(--color-neutral-100);
+  --color-surface-secondary-border: var(--color-neutral-400);
+  --color-text-primary: var(--color-neutral-950);
+  --color-text-secondary: var(--color-neutral-600);
+  --color-text-disabled: var(--color-neutral-500);
+  --color-text-special: var(--color-brand-700);
+  --color-primary-default: var(--color-brand-600);
+  --color-primary-hovered: var(--color-brand-700);
+  --color-secondary-default: var(--color-neutral-950);
+  --color-secondary-hovered: var(--color-neutral-800);
+
+  /* Figma · Typography / Primitive */
+  --font-family-outfit: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-family-righteous: 'Righteous', 'Outfit', ui-sans-serif, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-12: 0.75rem;
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-18: 1.125rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+  --font-size-28: 1.75rem;
+  --font-size-32: 2rem;
+  --font-size-40: 2.5rem;
+  --font-size-48: 3rem;
+  --font-size-56: 3.5rem;
+  --line-height-16: 1rem;
+  --line-height-20: 1.25rem;
+  --line-height-24: 1.5rem;
+  --line-height-26: 1.625rem;
+  --line-height-28: 1.75rem;
+  --line-height-32: 2rem;
+  --line-height-36: 2.25rem;
+  --line-height-40: 2.5rem;
+  --line-height-48: 3rem;
+  --line-height-56: 3.5rem;
+  --line-height-64: 4rem;
+
+  /* Figma · Typography / Semantic */
+  --display-large-font-size: var(--font-size-56);
+  --display-large-line-height: var(--line-height-64);
+  /* Display/Large/font-weight: substituído pela extensão (override) */
+  /* Display/Large/font-family: substituído pela extensão (override) */
+  --display-small-font-size: var(--font-size-48);
+  --display-small-line-height: var(--line-height-56);
+  /* Display/Small/font-weight: substituído pela extensão (override) */
+  /* Display/Small/font-family: substituído pela extensão (override) */
+  --heading-h1-font-size: var(--font-size-40);
+  --heading-h1-line-height: var(--line-height-48);
+  /* Heading/H1/font-weight: substituído pela extensão (override) */
+  /* Heading/H1/font-family: substituído pela extensão (override) */
+  --heading-h2-font-size: var(--font-size-32);
+  --heading-h2-line-height: var(--line-height-40);
+  /* Heading/H2/font-weight: substituído pela extensão (override) */
+  /* Heading/H2/font-family: substituído pela extensão (override) */
+  --heading-h3-font-size: var(--font-size-28);
+  --heading-h3-line-height: var(--line-height-36);
+  /* Heading/H3/font-weight: substituído pela extensão (override) */
+  /* Heading/H3/font-family: substituído pela extensão (override) */
+  --heading-h4-font-size: var(--font-size-24);
+  --heading-h4-line-height: var(--line-height-32);
+  /* Heading/H4/font-weight: substituído pela extensão (override) */
+  /* Heading/H4/font-family: substituído pela extensão (override) */
+  --heading-h5-font-size: var(--font-size-20);
+  --heading-h5-line-height: var(--line-height-28);
+  /* Heading/H5/font-weight: substituído pela extensão (override) */
+  /* Heading/H5/font-family: substituído pela extensão (override) */
+  --heading-h6-font-size: var(--font-size-18);
+  --heading-h6-line-height: var(--line-height-26);
+  /* Heading/H6/font-weight: substituído pela extensão (override) */
+  /* Heading/H6/font-family: substituído pela extensão (override) */
+  --body-large-regular-font-size: var(--font-size-18);
+  --body-large-regular-line-height: var(--line-height-28);
+  --body-large-regular-font-weight: var(--font-weight-regular);
+  --body-large-regular-font-family: var(--font-family-outfit);
+  --body-large-medium-font-size: var(--font-size-18);
+  --body-large-medium-line-height: var(--line-height-28);
+  --body-large-medium-font-weight: var(--font-weight-medium);
+  --body-large-medium-font-family: var(--font-family-outfit);
+  --body-medium-regular-font-size: var(--font-size-16);
+  --body-medium-regular-line-height: var(--line-height-24);
+  --body-medium-regular-font-weight: var(--font-weight-regular);
+  --body-medium-regular-font-family: var(--font-family-outfit);
+  --body-medium-medium-font-size: var(--font-size-16);
+  --body-medium-medium-line-height: var(--line-height-24);
+  --body-medium-medium-font-weight: var(--font-weight-medium);
+  --body-medium-medium-font-family: var(--font-family-outfit);
+  --body-small-regular-font-size: var(--font-size-14);
+  --body-small-regular-line-height: var(--line-height-20);
+  --body-small-regular-font-weight: var(--font-weight-regular);
+  --body-small-regular-font-family: var(--font-family-outfit);
+  --body-small-medium-font-size: var(--font-size-14);
+  --body-small-medium-line-height: var(--line-height-20);
+  --body-small-medium-font-weight: var(--font-weight-medium);
+  --body-small-medium-font-family: var(--font-family-outfit);
+  --label-medium-font-size: var(--font-size-14);
+  --label-medium-line-height: var(--line-height-20);
+  --label-medium-font-weight: var(--font-weight-semibold);
+  --label-medium-font-family: var(--font-family-outfit);
+  --label-small-font-size: var(--font-size-12);
+  --label-small-line-height: var(--line-height-16);
+  --label-small-font-weight: var(--font-weight-semibold);
+  --label-small-font-family: var(--font-family-outfit);
+  --caption-regular-font-size: var(--font-size-12);
+  --caption-regular-line-height: var(--line-height-16);
+  --caption-regular-font-weight: var(--font-weight-regular);
+  --caption-regular-font-family: var(--font-family-outfit);
+  --button-default-font-size: var(--font-size-16);
+  --button-default-line-height: var(--line-height-24);
+  --button-default-font-weight: var(--font-weight-semibold);
+  --button-default-font-family: var(--font-family-outfit);
+
+  /* Extensão do código (não existe no Figma) · Typography / Semantic (override do código) */
+  --display-large-font-family: var(--font-family-outfit);
+  --display-large-font-weight: var(--font-weight-bold);
+  --display-small-font-family: var(--font-family-outfit);
+  --display-small-font-weight: var(--font-weight-bold);
+  --heading-h1-font-family: var(--font-family-outfit);
+  --heading-h1-font-weight: var(--font-weight-bold);
+  --heading-h2-font-family: var(--font-family-outfit);
+  --heading-h2-font-weight: var(--font-weight-bold);
+  --heading-h3-font-family: var(--font-family-outfit);
+  --heading-h3-font-weight: var(--font-weight-semibold);
+  --heading-h4-font-family: var(--font-family-outfit);
+  --heading-h4-font-weight: var(--font-weight-semibold);
+  --heading-h5-font-family: var(--font-family-outfit);
+  --heading-h5-font-weight: var(--font-weight-semibold);
+  --heading-h6-font-family: var(--font-family-outfit);
+  --heading-h6-font-weight: var(--font-weight-semibold);
+
+  /* Extensão do código (não existe no Figma) · Space / Primitive */
+  --space-0: 0rem;
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-20: 1.25rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-40: 2.5rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-80: 5rem;
+  --space-96: 6rem;
+  --space-128: 8rem;
+  --space-160: 10rem;
+
+  /* Extensão do código (não existe no Figma) · Space / Semantic */
+  --space-gutter-mobile: var(--space-20);
+  --space-gutter-tablet: var(--space-40);
+  --space-gutter-desktop: var(--space-64);
+  --space-stack-tight: var(--space-8);
+  --space-stack-default: var(--space-16);
+  --space-stack-loose: var(--space-32);
+  --space-section-mobile: var(--space-80);
+  --space-section-desktop: var(--space-160);
+
+  /* Extensão do código (não existe no Figma) · Shape / Primitive */
+  --radius-0: 0rem;
+  --radius-8: 0.5rem;
+  --radius-12: 0.75rem;
+  --radius-20: 1.25rem;
+  --radius-32: 2rem;
+  --radius-full: 999px;
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+
+  /* Extensão do código (não existe no Figma) · Shape / Semantic */
+  --radius-control: var(--radius-full);
+  --radius-field: var(--radius-12);
+  --radius-media: var(--radius-20);
+  --radius-block: var(--radius-32);
+  --border-hairline: var(--border-width-1);
+  --border-focus: var(--border-width-2);
+
+  /* Extensão do código (não existe no Figma) · Color / Semantic (extensão) */
+  --color-on-primary: var(--color-base-white);
+  --color-on-primary-secondary: var(--color-brand-100);
+  --color-focus-ring: var(--color-brand-600);
+  --color-selection: var(--color-brand-100);
+  --color-shadow: var(--color-neutral-950);
+
+  /* Extensão do código (não existe no Figma) · Motion / Primitive (fora do DS) */
+  --duration-150: 150ms;
+  --duration-350: 350ms;
+  --duration-600: 600ms;
+  --easing-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Figma · Color / Semantic — modo Dark (preservado, não ativado por padrão) */
+:root[data-theme="dark"] {
+  --color-background: var(--color-neutral-950);
+  --color-background-border: var(--color-neutral-700);
+  --color-surface-primary: var(--color-neutral-900);
+  --color-surface-primary-border: var(--color-neutral-700);
+  --color-surface-secondary: var(--color-neutral-800);
+  --color-surface-secondary-border: var(--color-neutral-600);
+  --color-text-primary: var(--color-neutral-50);
+  --color-text-secondary: var(--color-neutral-300);
+  --color-text-disabled: var(--color-neutral-500);
+  --color-text-special: var(--color-brand-300);
+  --color-primary-default: var(--color-brand-500);
+  --color-primary-hovered: var(--color-brand-400);
+  --color-secondary-default: var(--color-neutral-50);
+  --color-secondary-hovered: var(--color-neutral-200);
+  --color-on-primary: var(--color-base-white);
+  --color-on-primary-secondary: var(--color-brand-100);
+  --color-focus-ring: var(--color-brand-300);
+  --color-selection: var(--color-brand-800);
+  --color-shadow: var(--color-base-black);
+}

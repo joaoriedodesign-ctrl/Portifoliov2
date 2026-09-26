@@ -1,0 +1,83 @@
+/* ───────── Hero ─────────
+   Letras de PORTFÓLIO (contornos em Outfit Black vindos do Figma) soltas sobre o
+   fundo, em Primary-default, sangrando pela direita e pela base. O "palco"
+   (.hero__art) é o recorte do frame do Figma em cada layout; o SVG é posicionado
+   dentro dele em % — valores gerados em components/hero.js a partir do layout. */
+.hero { position: relative; overflow: clip; padding-top: var(--space-24); }
+.hero__grid {
+  display: flex; flex-direction: column;
+  min-height: calc(100svh - var(--header-h) - var(--space-24));
+}
+.hero__intro { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.hero__id { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-12); margin-bottom: var(--space-20); }
+.hero__name { font: var(--body-large-medium-font-weight) var(--body-large-medium-font-size)/var(--body-large-medium-line-height) var(--body-large-medium-font-family); }
+.hero__role {
+  padding: var(--space-4) var(--space-12); border-radius: var(--radius-control);
+  border: var(--border-hairline) solid var(--color-surface-secondary-border);
+  font: var(--label-medium-font-weight) var(--label-medium-font-size)/var(--label-medium-line-height) var(--label-medium-font-family);
+}
+.hero__title {
+  font-family: var(--heading-h1-font-family); font-weight: var(--heading-h1-font-weight);
+  font-size: var(--heading-h3-font-size); line-height: var(--heading-h3-line-height);
+  text-wrap: balance; max-width: 18ch;
+}
+.hero__bio { margin-top: var(--space-16); margin-bottom: var(--space-32); color: var(--color-text-secondary); font-size: var(--body-large-regular-font-size); line-height: var(--body-large-regular-line-height); max-width: 30ch; text-wrap: pretty; }
+
+/* Palco — mobile/tablet: bloco no fim do hero, largura total (sangra pelas bordas) */
+.hero__intro { margin-bottom: var(--space-32); }
+.hero__art {
+  position: relative; flex: none;
+  margin-top: auto; margin-inline: calc(-1 * var(--gutter));
+  pointer-events: none;
+}
+.hero__art::before { content: ''; display: block; aspect-ratio: var(--stage-m); }
+.hero__letters {
+  position: absolute; overflow: visible;
+  left: var(--ml); top: var(--mt); width: var(--mw); max-width: none; height: auto;
+  aspect-ratio: var(--vb-ratio);
+  fill: var(--color-primary-default);
+}
+.glyph {
+  --x: var(--dx); --y: var(--dy);
+  transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px)) rotate(calc(var(--r) * 1deg));
+  transform-origin: 0 0;
+}
+.glyph.is-moving { will-change: transform; }
+
+@media (max-width: 63.99rem) {
+  .glyph { --x: var(--mx); --y: var(--my); }
+}
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  /* tablet: palco limitado e alinhado à direita, para as letras não dominarem a dobra */
+  .hero__art { width: min(100vw, 38rem); align-self: flex-end; margin-left: 0; }
+}
+
+@media (min-width: 48rem) {
+  .hero__title { font-size: var(--heading-h1-font-size); line-height: var(--heading-h1-line-height); }
+}
+
+/* Desktop: textos embaixo à esquerda, letras ocupando a direita até a borda da tela */
+@media (min-width: 64rem) {
+  .hero { padding-top: 0; }
+  .hero__grid { min-height: clamp(34rem, calc(100svh - var(--header-h)), 60rem); justify-content: flex-end; padding-block: var(--space-32) var(--space-64); }
+  .hero__intro { max-width: 27rem; }
+  .hero__art {
+    position: absolute; right: 0; bottom: 0; margin: 0; padding: 0;
+    width: min(60.6vw, calc(100vw - 31rem), calc((min(100svh, 60rem + var(--header-h)) - var(--header-h) - var(--space-24)) * var(--stage-dk)));
+  }
+  .hero__art::before { aspect-ratio: var(--stage-d); }
+  .hero__letters { left: var(--dl); top: var(--dt); width: var(--dw); }
+  .hero__intro { margin-bottom: 0; }
+}
+
+/* Sequência: primeiro as letras caem, depois os textos entram.
+   Só com movimento permitido e JS ativo; se o script falhar, o failsafe do <head>
+   remove html.js e tudo aparece na composição final. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-fall]:not(.is-live):not(.is-settled) .glyph { visibility: hidden; }
+  .js [data-hero]:not(.is-revealed) .hero__intro > * { opacity: 0; transform: translateY(var(--space-16)); }
+  [data-hero] .hero__intro > * { transition: opacity var(--duration-600) var(--ease-out), transform var(--duration-600) var(--ease-out); }
+  [data-hero].is-revealed .hero__intro > :nth-child(2) { transition-delay: 90ms; }
+  [data-hero].is-revealed .hero__intro > :nth-child(3) { transition-delay: 180ms; }
+  [data-hero].is-revealed .hero__intro > :nth-child(4) { transition-delay: 270ms; }
+}

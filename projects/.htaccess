@@ -1,4 +1,0 @@
-# Gerado por build.mjs — cópias dos sites dos clientes: fora do índice dos buscadores
-<IfModule mod_headers.c>
-  Header set X-Robots-Tag "noindex"
-</IfModule>
