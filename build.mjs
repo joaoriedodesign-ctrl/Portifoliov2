@@ -50,7 +50,12 @@ const js = await esbuild.build({ entryPoints: [join(root, 'src/client/main.js')]
 const jsText = js.outputFiles[0].text;
 writeFileSync(join(dist, 'assets/app.js'), jsText);
 
-const build = { css: `/assets/app.css?v=${hash(css)}`, js: `/assets/app.js?v=${hash(jsText)}`, hosted };
+// Física do hero (matter-js) em arquivo à parte, carregado sob demanda pela home
+const phys = await esbuild.build({ entryPoints: [join(root, 'src/client/physics-vendor.js')], bundle: true, minify: true, format: 'iife', target: ['es2020'], write: false });
+const physText = phys.outputFiles[0].text;
+writeFileSync(join(dist, 'assets/physics.js'), physText);
+
+const build = { css: `/assets/app.css?v=${hash(css)}`, js: `/assets/app.js?v=${hash(jsText)}`, physics: `/assets/physics.js?v=${hash(physText)}`, hosted };
 
 const render = { home, projects: projectsPage, project: projectPage, about: aboutPage, contact: contactPage };
 const routes = allRoutes();

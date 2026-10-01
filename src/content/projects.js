@@ -1,16 +1,14 @@
-// Conteúdo dos projetos (PT/EN). Fatos vêm do sitemap v2 e, no caso do
-// Design System Multi-tenant, do case da v1 do portfólio (lib/case-studies.ts).
-// Textos marcados "rascunho" são editoriais: descrevem o que as fontes já dizem,
-// sem acrescentar resultados, métricas ou credenciais. Revise antes de publicar.
+// Conteúdo dos projetos (PT/EN), na dinâmica desafio → solução → resultado.
+// Voz: primeira pessoa do passado. Fatos e números vêm do CV base
+// (joao-riedo-cv-base-pt.docx), do sitemap v2 e do case da v1 do portfólio.
+// Nada de métricas que não estejam nessas fontes: onde não há resultado de negócio
+// medido, o resultado descreve a entrega e os números descrevem o escopo.
 
 // Ordem de exibição (Home, /projetos e "Próximo projeto" em loop).
 export const projectOrder = ['instituto-mais', 'multi-tenant-design-system', 'dr-carlos-mattos', 'marina-alves'];
 
 export const projects = {
   // Case de sistema (sem site navegável): no lugar da demonstração, mostra telas reais.
-  // Conteúdo confirmado na v1 do portfólio. Atribuição: construído na Play4tune,
-  // hoje também atende Multibet e Supernova. Sem Tokens Studio/Style Dictionary na ponte
-  // Figma → Storybook. Governança formal (review/versionamento) ainda não existe.
   'multi-tenant-design-system': {
     slug: 'multi-tenant-design-system',
     name: 'Design System Multi-tenant',
@@ -22,51 +20,69 @@ export const projects = {
     gallery: ['home', 'gamepage', 'welcome-bonus'],
     pt: {
       category: 'Design System',
-      subtitle: 'De arquivos Figma defasados na Play4tune a uma base de tokens única que hoje também sustenta a Multibet e a Supernova.',
-      summary: 'Design system arquitetado do zero na Play4tune, hoje também em uso na Multibet e na Supernova, com automação de tema por tenant.',
-      facts: { role: 'Arquitetura de Design System', duration: 'Em andamento desde janeiro', platform: 'Web (multi-tenant)', team: 'Eu (arquitetura) + líder (refinamento) + colega (aplicação)' },
-      context: 'Antes do design system existir, não havia reuso real de componentes entre tenants: cada tela nova exigia entrar em arquivos específicos e garimpar o componente de onde ele tivesse sido usado da última vez, e esses arquivos ficavam defasados quase imediatamente. Na prática, nunca existia uma fonte única e atualizada: cada designer trabalhava com uma versão ligeiramente diferente da interface, o que gerava inconsistência visual e retrabalho constante entre design e desenvolvimento.',
+      subtitle: 'Estruturei o Design System da operação white-label internacional da Supernova, aplicado também a Play4tune e Multibet.',
+      summary: 'Estruturei um Design System multi-tenant com 87 telas, mais de 200 componentes e 3 tenants, com redução estimada de 80% no tempo de criação de telas.',
+      facts: { role: 'Product Designer · arquitetura do Design System', duration: 'fev–set/2026', platform: 'Web (multi-tenant)', team: 'Eu (arquitetura) + liderança (refinamento) + colega (aplicação) + Engenharia' },
       galleryTitle: 'Telas em produção',
       galleryCaption: 'Telas reais em produção, do mobile ao desktop, com os mesmos tokens e componentes do design system.',
       galleryLabels: { home: 'Home', gamepage: 'Gamepage', 'welcome-bonus': 'Welcome Bonus' },
       storybookCaption: 'Biblioteca de componentes documentada no Storybook. Só os nomes catalogados aparecem, sem telas reais, por confidencialidade.',
-      decisions: [
-        { title: 'Arquitetura de tokens', text: 'Base estruturada em Figma variables com aliasing primitiva → semântica, a mesma disciplina de tokens usada neste portfólio. No código, os tokens chegam ao Storybook por uma sincronização própria (script e processo manual, sem Tokens Studio ou Style Dictionary na ponte).' },
-        { title: 'Automação de tema por tenant', text: 'Em vez de customizar cor por cor, tela por tela, criei uma camada de automação sobre a base semântica que gera o tema de cada tenant. Hoje ela atende 3 tenants, elimina a troca manual de cor e acelera a entrada de novos tenants.' },
-        { title: 'Dívida técnica em paralelo', text: 'Corrigi componentes cadastrados sem cobertura responsiva completa e migrei componentes antigos para o padrão novo, junto com a evolução da base e não depois dela.' },
-        { title: 'Governança compartilhada', text: 'A evolução da base é dividida entre arquitetura (eu), refinamento (liderança) e aplicação no dia a dia (um colega de time), o que ajuda a manter a consistência com mais de uma pessoa mexendo no sistema. Um processo formal de review e versionamento ainda está amadurecendo.' },
+      challenge: [
+        'Quando cheguei, não havia reuso real de componentes entre as marcas. Cada tela nova exigia garimpar o componente no arquivo em que ele tinha sido usado pela última vez, e esses arquivos ficavam defasados quase imediatamente.',
+        'Sem uma fonte única e atualizada, cada designer trabalhava com uma versão ligeiramente diferente da interface. O resultado era inconsistência visual entre Supernova, Play4tune e Multibet e retrabalho constante entre design e desenvolvimento.',
       ],
-      numbersNote: null,
-      numbers: [
-        { value: '87', label: 'telas sustentadas pelo design system' },
-        { value: '200+', label: 'componentes reutilizados entre tenants' },
-        { value: '3', label: 'tenants atendidos pela automação de tema' },
-        { value: '1/5', label: 'do tempo para criar uma tela nova' },
-      ],
+      solution: {
+        intro: 'Substituí os arquivos dispersos por uma base compartilhada, construída em parceria com Produto e Engenharia.',
+        steps: [
+          { title: 'Arquitetura de tokens', text: 'Criei tokens primitivos e semânticos em variáveis do Figma, com aliasing primitivo → semântico. Assim, cada decisão visual passou a ter um nome e um único lugar para mudar.' },
+          { title: 'Temas por tenant', text: 'Em vez de trocar cor por cor, tela por tela, montei uma camada de temas sobre a base semântica que gera a identidade de cada marca. Ela passou a atender os 3 tenants.' },
+          { title: 'Componentes reutilizáveis', text: 'Migrei componentes antigos para o padrão novo e corrigi os que não tinham cobertura responsiva completa, junto com a evolução da base e não depois dela.' },
+          { title: 'Ponte com Engenharia', text: 'Estruturei a implementação com Figma e Storybook e estabeleci com Engenharia um padrão de handoff, com especificações e registros de decisões (DDRs), que reduziu dúvidas recorrentes.' },
+        ],
+      },
+      result: {
+        text: ['O Design System entrou em produção nas três operações. Com tokens, componentes reutilizáveis e temas por marca, contribuí para uma redução estimada de 80% no tempo de criação de telas, calculada com base nos tempos de conclusão das tarefas do setor de UX.'],
+        numbersNote: null,
+        numbers: [
+          { value: '87', label: 'telas sustentadas pelo design system' },
+          { value: '200+', label: 'componentes reutilizados entre tenants' },
+          { value: '3', label: 'tenants em produção' },
+          { value: '−80%', label: 'no tempo de criação de telas (estimado)' },
+        ],
+      },
     },
     en: {
       category: 'Design System',
-      subtitle: 'From outdated Figma files at Play4tune to a single token foundation that now also powers Multibet and Supernova.',
-      summary: 'Design system architected from scratch at Play4tune, now also used by Multibet and Supernova, with per-tenant theme automation.',
-      facts: { role: 'Design System Architecture', duration: 'Ongoing since January', platform: 'Web (multi-tenant)', team: 'Me (architecture) + lead (refinement) + teammate (application)' },
-      context: 'Before the design system existed, there was no real component reuse across tenants: every new screen meant digging through specific files to find wherever a component had last been used, and those files went out of date almost immediately. In practice there was never a single, up-to-date source of truth: each designer worked from a slightly different version of the interface, which caused visual inconsistency and constant rework between design and development.',
+      subtitle: 'I structured the Design System for Supernova’s international white-label operation, also applied to Play4tune and Multibet.',
+      summary: 'I structured a multi-tenant Design System with 87 screens, 200+ components and 3 tenants, cutting screen creation time by an estimated 80%.',
+      facts: { role: 'Product Designer · Design System architecture', duration: 'Feb–Sep 2026', platform: 'Web (multi-tenant)', team: 'Me (architecture) + lead (refinement) + teammate (application) + Engineering' },
       galleryTitle: 'Screens in production',
       galleryCaption: 'Real production screens, from mobile to desktop, built with the same design system tokens and components.',
       galleryLabels: { home: 'Home', gamepage: 'Gamepage', 'welcome-bonus': 'Welcome Bonus' },
       storybookCaption: 'Component library documented in Storybook. Only the catalogued names are shown, with no real screens, for confidentiality.',
-      decisions: [
-        { title: 'Token architecture', text: 'Built on Figma variables with primitive → semantic aliasing, the same token discipline used in this portfolio. On the code side, tokens reach Storybook through a dedicated sync (a manual script and process, no Tokens Studio or Style Dictionary in the pipeline).' },
-        { title: 'Per-tenant theme automation', text: 'Instead of customizing color by color, screen by screen, I built an automation layer on top of the semantic foundation that generates each tenant’s theme. It now serves 3 tenants, removes manual color swapping and speeds up onboarding new tenants.' },
-        { title: 'Technical debt, in parallel', text: 'I fixed components that had shipped without full responsive coverage and migrated legacy components to the new standard, alongside the system’s evolution rather than after it.' },
-        { title: 'Shared governance', text: 'Evolving the foundation is split between architecture (me), refinement (leadership) and day-to-day application (a teammate), which helps keep things consistent with more than one person touching the system. A formal review and versioning process is still maturing.' },
+      challenge: [
+        'When I joined, there was no real component reuse across brands. Every new screen meant digging up a component from wherever it had last been used, and those files went out of date almost immediately.',
+        'With no single, up-to-date source, each designer worked from a slightly different version of the interface. The result was visual inconsistency across Supernova, Play4tune and Multibet, and constant rework between design and development.',
       ],
-      numbersNote: null,
-      numbers: [
-        { value: '87', label: 'screens powered by the design system' },
-        { value: '200+', label: 'components reused across tenants' },
-        { value: '3', label: 'tenants served by the theme automation' },
-        { value: '1/5', label: 'of the time to create a new screen' },
-      ],
+      solution: {
+        intro: 'I replaced the scattered files with a shared foundation, built together with Product and Engineering.',
+        steps: [
+          { title: 'Token architecture', text: 'I created primitive and semantic tokens in Figma variables, with primitive → semantic aliasing, so every visual decision got a name and a single place to change it.' },
+          { title: 'Per-tenant themes', text: 'Instead of swapping color by color, screen by screen, I built a theme layer on top of the semantic foundation that generates each brand’s identity. It came to serve all 3 tenants.' },
+          { title: 'Reusable components', text: 'I migrated legacy components to the new standard and fixed the ones without full responsive coverage, alongside the system’s evolution rather than after it.' },
+          { title: 'Bridge to Engineering', text: 'I structured the implementation with Figma and Storybook and set up a handoff standard with Engineering, with specs and design decision records (DDRs), which cut down recurring questions.' },
+        ],
+      },
+      result: {
+        text: ['The Design System went into production across all three operations. With tokens, reusable components and per-brand themes, I contributed to an estimated 80% reduction in screen creation time, based on the UX team’s task completion times.'],
+        numbersNote: null,
+        numbers: [
+          { value: '87', label: 'screens powered by the design system' },
+          { value: '200+', label: 'components reused across tenants' },
+          { value: '3', label: 'tenants in production' },
+          { value: '−80%', label: 'screen creation time (estimated)' },
+        ],
+      },
     },
   },
 
@@ -81,42 +97,59 @@ export const projects = {
     extras: [],
     pt: {
       category: 'Site institucional',
-      subtitle: 'Clínica multidisciplinar em Londrina.',
-      summary: 'Clínica multidisciplinar em Londrina: 7 especialidades, profissionais e um caminho curto até o agendamento.',
-      facts: { role: 'UX/UI + front-end', duration: '1 a 3 meses', platform: 'Web responsiva', team: 'Eu + a clínica' },
-      // rascunho
-      context: 'Quem procura uma clínica multidisciplinar raramente sabe o nome da especialidade de que precisa. O site precisava apresentar sete especialidades e nove profissionais sem virar um catálogo, levando cada pessoa do “para quem é isto?” até o agendamento com o profissional certo.',
-      decisions: [
-        { title: 'Organização por público', text: 'O conteúdo parte de quem procura atendimento, e não da lista de serviços. Cada fase da vida abre um caminho próprio até as especialidades relacionadas.' },
-        { title: 'Agendamento direto com cada profissional', text: 'Cada profissional tem o próprio ponto de contato, com a mensagem já identificando quem a pessoa quer procurar.' },
-        { title: 'Identidade em movimento', text: 'A identidade visual da clínica ganha movimento na interface, de forma contida e respeitando a preferência por movimento reduzido.' },
-        { title: 'Estrutura para descoberta e medição', text: 'A página foi estruturada para ser encontrada em buscadores e para ter as interações principais mensuráveis.' },
+      subtitle: 'Criei e publiquei a presença digital de uma clínica multidisciplinar em Londrina, da identidade visual ao site.',
+      summary: 'Criei a identidade visual e o site de uma clínica multidisciplinar em Londrina, com 7 especialidades e um caminho curto até o agendamento.',
+      facts: { role: 'Branding, UX/UI e desenvolvimento', duration: '1 a 3 meses', platform: 'Web responsiva', team: 'Eu + a clínica' },
+      challenge: [
+        'A clínica precisava construir a presença digital do zero, da identidade visual ao site.',
+        'Quem procura uma clínica multidisciplinar raramente sabe o nome da especialidade de que precisa. O site tinha de apresentar sete especialidades e nove profissionais sem virar um catálogo, e levar cada pessoa do “para quem é isto?” até o agendamento com o profissional certo.',
       ],
-      numbers: [
-        { value: '7', label: 'especialidades' },
-        { value: '9', label: 'profissionais' },
-        { value: '4', label: 'fases da vida' },
-        { value: '2', label: 'temas (claro e escuro)' },
-      ],
+      solution: {
+        intro: 'Conduzi o projeto inteiro: identidade visual, logotipo, variáveis, tokens, interfaces, código e publicação.',
+        steps: [
+          { title: 'Organização por público', text: 'Organizei o conteúdo a partir de quem procura atendimento, e não da lista de serviços. Cada fase da vida abre um caminho próprio até as especialidades relacionadas.' },
+          { title: 'Agendamento direto com cada profissional', text: 'Dei a cada profissional o próprio ponto de contato no WhatsApp, com a mensagem já identificando quem a pessoa quer procurar.' },
+          { title: 'Identidade em movimento', text: 'Levei a identidade visual da clínica para a interface com movimento contido, respeitando a preferência por movimento reduzido, e criei os temas claro e escuro.' },
+          { title: 'Estrutura para descoberta e campanhas', text: 'Estruturei a página para buscadores, com dados estruturados de clínica médica e Open Graph, e preparei as tags de mídia paga para apoiar divulgação e campanhas de aquisição.' },
+        ],
+      },
+      result: {
+        text: ['Publiquei o site em institutomaislondrina.com.br, com experiência responsiva para mobile e desktop e caminhos de contato que levam ao agendamento em poucos toques.'],
+        numbers: [
+          { value: '7', label: 'especialidades' },
+          { value: '9', label: 'profissionais' },
+          { value: '4', label: 'fases da vida' },
+          { value: '2', label: 'temas (claro e escuro)' },
+        ],
+      },
     },
     en: {
       category: 'Institutional website',
-      subtitle: 'Multidisciplinary clinic in Londrina, Brazil.',
-      summary: 'Multidisciplinary clinic in Londrina: 7 specialties, practitioners and a short path to booking.',
-      facts: { role: 'UX/UI + front-end', duration: '1 to 3 months', platform: 'Responsive web', team: 'Me + the clinic' },
-      context: 'People looking for a multidisciplinary clinic rarely know the name of the specialty they need. The site had to present seven specialties and nine practitioners without becoming a catalogue, taking each visitor from “who is this for?” to booking with the right practitioner.',
-      decisions: [
-        { title: 'Organized by audience', text: 'Content starts from who is seeking care, not from a list of services. Each life stage opens its own path to the related specialties.' },
-        { title: 'Direct booking with each practitioner', text: 'Every practitioner has their own contact point, with the message already naming who the visitor wants to see.' },
-        { title: 'Identity in motion', text: 'The clinic’s visual identity gains motion in the interface — restrained, and respecting the reduced-motion preference.' },
-        { title: 'Built for discovery and measurement', text: 'The page was structured to be found by search engines and to make its key interactions measurable.' },
+      subtitle: 'I created and launched the digital presence of a multidisciplinary clinic in Londrina, Brazil, from visual identity to website.',
+      summary: 'I created the visual identity and website of a multidisciplinary clinic in Londrina, with 7 specialties and a short path to booking.',
+      facts: { role: 'Branding, UX/UI and development', duration: '1 to 3 months', platform: 'Responsive web', team: 'Me + the clinic' },
+      challenge: [
+        'The clinic needed to build its digital presence from scratch, from visual identity to website.',
+        'People looking for a multidisciplinary clinic rarely know the name of the specialty they need. The site had to present seven specialties and nine practitioners without becoming a catalogue, taking each visitor from “who is this for?” to booking with the right practitioner.',
       ],
-      numbers: [
-        { value: '7', label: 'specialties' },
-        { value: '9', label: 'practitioners' },
-        { value: '4', label: 'life stages' },
-        { value: '2', label: 'themes (light and dark)' },
-      ],
+      solution: {
+        intro: 'I ran the whole project: visual identity, logo, variables, tokens, interfaces, code and launch.',
+        steps: [
+          { title: 'Organized by audience', text: 'I organized content around who is seeking care, not around a list of services. Each life stage opens its own path to the related specialties.' },
+          { title: 'Direct booking with each practitioner', text: 'I gave every practitioner their own WhatsApp contact point, with the message already naming who the visitor wants to see.' },
+          { title: 'Identity in motion', text: 'I brought the clinic’s visual identity into the interface with restrained motion, respecting the reduced-motion preference, and built light and dark themes.' },
+          { title: 'Built for discovery and campaigns', text: 'I structured the page for search engines, with medical clinic structured data and Open Graph, and set up paid media tags to support promotion and acquisition campaigns.' },
+        ],
+      },
+      result: {
+        text: ['I launched the site at institutomaislondrina.com.br, with a responsive experience for mobile and desktop and contact paths that reach booking in a few taps.'],
+        numbers: [
+          { value: '7', label: 'specialties' },
+          { value: '9', label: 'practitioners' },
+          { value: '4', label: 'life stages' },
+          { value: '2', label: 'themes (light and dark)' },
+        ],
+      },
     },
   },
 
@@ -130,41 +163,53 @@ export const projects = {
     extras: [],
     pt: {
       category: 'Landing page',
-      subtitle: 'Consultório de psiquiatria em Curitiba.',
-      summary: 'Consultório de psiquiatria em Curitiba, com toda a jornada levando a um único canal: o WhatsApp.',
+      subtitle: 'Desenhei e desenvolvi a landing page de um consultório de psiquiatria em Curitiba.',
+      summary: 'Desenhei e desenvolvi a landing page de um consultório de psiquiatria em Curitiba, com toda a jornada levando a um único canal: o WhatsApp.',
       facts: { role: 'UX/UI + front-end', duration: 'Menos de 1 mês', platform: 'Landing page responsiva', team: 'Eu + o cliente' },
-      context: 'Procurar um psiquiatra costuma começar com dúvida e hesitação. A landing page precisava ajudar a pessoa a se reconhecer no que lê, construir confiança e oferecer um único próximo passo claro.',
-      decisions: [
-        { title: 'Identificação inicial', text: 'A página começa pelo que a pessoa está vivendo, para que ela se reconheça antes de qualquer apresentação do consultório.' },
-        { title: 'Canal único de conversão', text: 'Toda a jornada leva ao mesmo lugar: o WhatsApp. Sem formulários concorrentes nem caminhos paralelos.' },
-        { title: 'Confiança antes do clique', text: 'As informações que sustentam a decisão aparecem antes do pedido de contato.' },
-        { title: 'Leveza e acessibilidade', text: 'Código enxuto, sem frameworks, com acessibilidade tratada como requisito desde o início.' },
-      ],
-      numbers: [
-        { value: '6', label: 'seções' },
-        { value: '6', label: 'pontos de contato no WhatsApp' },
-        { value: '2', label: 'modalidades' },
-        { value: '0', label: 'frameworks' },
-      ],
+      challenge: ['Procurar um psiquiatra costuma começar com dúvida e hesitação. A landing page precisava ajudar a pessoa a se reconhecer no que lê, construir confiança e oferecer um único próximo passo claro.'],
+      solution: {
+        intro: 'Desenhei a página em torno de uma decisão difícil e desenvolvi o front-end sem frameworks.',
+        steps: [
+          { title: 'Identificação inicial', text: 'Abri a página pelo que a pessoa está vivendo, para que ela se reconhecesse antes de qualquer apresentação do consultório.' },
+          { title: 'Canal único de conversão', text: 'Fiz toda a jornada levar ao mesmo lugar, o WhatsApp, sem formulários concorrentes nem caminhos paralelos.' },
+          { title: 'Confiança antes do clique', text: 'Posicionei as informações que sustentam a decisão antes do pedido de contato.' },
+          { title: 'Leveza e acessibilidade', text: 'Escrevi um código enxuto, sem frameworks, e tratei acessibilidade como requisito desde o início.' },
+        ],
+      },
+      result: {
+        text: ['Entreguei em menos de um mês uma landing page leve e responsiva, com seis pontos de contato que levam ao WhatsApp e atendimento presencial e online apresentados lado a lado.'],
+        numbers: [
+          { value: '6', label: 'seções' },
+          { value: '6', label: 'pontos de contato no WhatsApp' },
+          { value: '2', label: 'modalidades' },
+          { value: '0', label: 'frameworks' },
+        ],
+      },
     },
     en: {
       category: 'Landing page',
-      subtitle: 'Psychiatry practice in Curitiba, Brazil.',
-      summary: 'Psychiatry practice in Curitiba, with the whole journey leading to a single channel: WhatsApp.',
+      subtitle: 'I designed and built the landing page for a psychiatry practice in Curitiba, Brazil.',
+      summary: 'I designed and built the landing page for a psychiatry practice in Curitiba, with the whole journey leading to a single channel: WhatsApp.',
       facts: { role: 'UX/UI + front-end', duration: 'Less than 1 month', platform: 'Responsive landing page', team: 'Me + the client' },
-      context: 'Looking for a psychiatrist usually starts with doubt and hesitation. The landing page had to help visitors recognize themselves in what they read, build trust and offer one clear next step.',
-      decisions: [
-        { title: 'Starting with recognition', text: 'The page opens with what the visitor is going through, so they recognize themselves before any introduction of the practice.' },
-        { title: 'A single conversion channel', text: 'The whole journey leads to the same place: WhatsApp. No competing forms or parallel paths.' },
-        { title: 'Trust before the click', text: 'The information that supports the decision appears before the request to get in touch.' },
-        { title: 'Light and accessible', text: 'Lean code with no frameworks, with accessibility treated as a requirement from the start.' },
-      ],
-      numbers: [
-        { value: '6', label: 'sections' },
-        { value: '6', label: 'WhatsApp touchpoints' },
-        { value: '2', label: 'appointment types' },
-        { value: '0', label: 'frameworks' },
-      ],
+      challenge: ['Looking for a psychiatrist usually starts with doubt and hesitation. The landing page had to help visitors recognize themselves in what they read, build trust and offer one clear next step.'],
+      solution: {
+        intro: 'I designed the page around a difficult decision and built the front-end with no frameworks.',
+        steps: [
+          { title: 'Starting with recognition', text: 'I opened the page with what the visitor is going through, so they would recognize themselves before any introduction of the practice.' },
+          { title: 'A single conversion channel', text: 'I made the whole journey lead to the same place, WhatsApp, with no competing forms or parallel paths.' },
+          { title: 'Trust before the click', text: 'I placed the information that supports the decision before the request to get in touch.' },
+          { title: 'Light and accessible', text: 'I wrote lean code with no frameworks and treated accessibility as a requirement from the start.' },
+        ],
+      },
+      result: {
+        text: ['In less than a month, I delivered a light, responsive landing page with six touchpoints leading to WhatsApp and in-person and online care presented side by side.'],
+        numbers: [
+          { value: '6', label: 'sections' },
+          { value: '6', label: 'WhatsApp touchpoints' },
+          { value: '2', label: 'appointment types' },
+          { value: '0', label: 'frameworks' },
+        ],
+      },
     },
   },
 
@@ -179,41 +224,53 @@ export const projects = {
     extras: [{ key: 'mediaKit', href: '/projects/marina-alves/assets/docs/marina-alves-media-kit.pdf', hosted: true }],
     pt: {
       category: 'Mídia kit',
-      subtitle: 'Mídia kit online para uma persona de skincare.',
-      summary: 'Mídia kit online para uma persona de skincare — métricas, audiência e pacotes com contratação pelo WhatsApp.',
+      subtitle: 'Concebi um media kit em formato de landing page como proposta de produto para influenciadores.',
+      summary: 'Concebi um media kit online para uma persona de skincare, com métricas, audiência e pacotes contratáveis pelo WhatsApp.',
       facts: { role: 'UX/UI + front-end', duration: 'Menos de 1 mês', platform: 'Web responsiva', team: 'Projeto autoral' },
-      context: 'Um mídia kit em PDF costuma ser lido às pressas por quem decide uma parceria. A versão online organiza o conteúdo na ordem em que a marca decide, deixa preços e pacotes visíveis e foi pensada para funcionar dentro do navegador do Instagram.',
-      decisions: [
-        { title: 'Organização pela decisão da marca', text: 'As seções seguem a ordem das perguntas de quem avalia uma parceria.' },
-        { title: 'Preços visíveis e contratação', text: 'Pacotes e valores ficam à vista, com a contratação a um toque pelo WhatsApp.' },
-        { title: 'Dados em movimento', text: 'Métricas e audiência ganham movimento para serem lidas rapidamente, sem depender dele para aparecer.' },
-        { title: 'Experiência no navegador do Instagram', text: 'Layout, carregamento e interações pensados para o navegador interno do Instagram.' },
-      ],
-      numbers: [
-        { value: '8', label: 'seções' },
-        { value: '6', label: 'pacotes' },
-        { value: '1', label: 'PDF' },
-        { value: '0', label: 'conteúdo perdido sem JavaScript' },
-      ],
+      challenge: ['Um media kit em PDF costuma ser lido às pressas por quem decide uma parceria. Quis testar um formato que facilitasse a avaliação por marcas e funcionasse bem dentro do navegador do Instagram.'],
+      solution: {
+        intro: 'Reuni perfil, audiência, conteúdos e pacotes comerciais em uma experiência responsiva.',
+        steps: [
+          { title: 'Organização pela decisão da marca', text: 'Organizei a hierarquia das informações na ordem das perguntas de quem avalia uma parceria, com os indicadores em destaque.' },
+          { title: 'Preços visíveis e contratação', text: 'Deixei pacotes e valores à vista, com a contratação a um toque pelo WhatsApp.' },
+          { title: 'Dados em movimento', text: 'Animei métricas e audiência para serem lidas rapidamente, sem depender do movimento para aparecer.' },
+          { title: 'Experiência no navegador do Instagram', text: 'Pensei layout, carregamento e interações para o navegador interno do Instagram e gerei também a versão em PDF.' },
+        ],
+      },
+      result: {
+        text: ['Publiquei o case no portfólio como projeto conceitual, com a página navegável e o PDF do media kit, pronto para ser adaptado a influenciadores reais.'],
+        numbers: [
+          { value: '8', label: 'seções' },
+          { value: '6', label: 'pacotes' },
+          { value: '1', label: 'PDF' },
+          { value: '0', label: 'conteúdo perdido sem JavaScript' },
+        ],
+      },
     },
     en: {
       category: 'Media kit',
-      subtitle: 'Online media kit for a skincare persona.',
-      summary: 'Online media kit for a skincare persona — metrics, audience and packages bookable on WhatsApp.',
+      subtitle: 'I conceived a media kit as a landing page, as a product proposal for influencers.',
+      summary: 'I conceived an online media kit for a skincare persona, with metrics, audience and packages bookable on WhatsApp.',
       facts: { role: 'UX/UI + front-end', duration: 'Less than 1 month', platform: 'Responsive web', team: 'Self-initiated project' },
-      context: 'A PDF media kit is usually skimmed in a hurry by whoever decides on a partnership. The online version orders the content the way a brand decides, keeps prices and packages visible and is designed to work inside Instagram’s in-app browser.',
-      decisions: [
-        { title: 'Organized around the brand’s decision', text: 'Sections follow the order of questions a brand asks when evaluating a partnership.' },
-        { title: 'Visible pricing and booking', text: 'Packages and prices are in plain sight, with booking one tap away on WhatsApp.' },
-        { title: 'Data in motion', text: 'Metrics and audience data are animated for quick reading, without depending on motion to appear.' },
-        { title: 'Built for Instagram’s browser', text: 'Layout, loading and interactions designed for Instagram’s in-app browser.' },
-      ],
-      numbers: [
-        { value: '8', label: 'sections' },
-        { value: '6', label: 'packages' },
-        { value: '1', label: 'PDF' },
-        { value: '0', label: 'content lost without JavaScript' },
-      ],
+      challenge: ['A PDF media kit is usually skimmed in a hurry by whoever decides on a partnership. I wanted to test a format that made it easier for brands to evaluate and that worked well inside Instagram’s in-app browser.'],
+      solution: {
+        intro: 'I brought profile, audience, content and commercial packages together in a responsive experience.',
+        steps: [
+          { title: 'Organized around the brand’s decision', text: 'I ordered the information by the questions a brand asks when evaluating a partnership, with key indicators highlighted.' },
+          { title: 'Visible pricing and booking', text: 'I kept packages and prices in plain sight, with booking one tap away on WhatsApp.' },
+          { title: 'Data in motion', text: 'I animated metrics and audience data for quick reading, without depending on motion for them to appear.' },
+          { title: 'Built for Instagram’s browser', text: 'I designed layout, loading and interactions for Instagram’s in-app browser and also produced a PDF version.' },
+        ],
+      },
+      result: {
+        text: ['I published the case in my portfolio as a concept project, with the navigable page and the media kit PDF, ready to be adapted for real influencers.'],
+        numbers: [
+          { value: '8', label: 'sections' },
+          { value: '6', label: 'packages' },
+          { value: '1', label: 'PDF' },
+          { value: '0', label: 'content lost without JavaScript' },
+        ],
+      },
     },
   },
 };
