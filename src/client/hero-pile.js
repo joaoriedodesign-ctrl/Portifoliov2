@@ -169,7 +169,9 @@ function createPile(M, { art, hero, list }) {
   function measure() {
     const r = list.getBoundingClientRect();
     W = r.width; H = r.height;
-    inset = Math.min(24, W * 0.04);
+    // recuo lateral da pilha (--pile-inset no CSS; 0 no celular, de borda a borda)
+    const v = parseFloat(getComputedStyle(art).getPropertyValue('--pile-inset'));
+    inset = Number.isFinite(v) ? v : Math.min(24, W * 0.04);
   }
 
   // Monta a pilha: plano de queda, altura do palco (mobile) e início da animação
