@@ -1,5 +1,5 @@
 {
-  "$source": "Figma · PORTIFÓLIO (piyW12d3fVOGIyEcmxFqd2) · variáveis locais lidas via Plugin API em 2026-09-25",
+  "$source": "Figma · PORTIFÓLIO (piyW12d3fVOGIyEcmxFqd2) · variáveis locais lidas via Plugin API em 2026-09-25; badges (Color/Badge e paletas violet, green, red, yellow, teal, pink) em 2026-10-01",
   "$note": "Espelho fiel do Figma. Não edite à mão: nomes, valores, modos e aliases (→) devem continuar iguais ao arquivo. Adições que não existem no Figma ficam em extensions.tokens.json.",
   "collections": {
     "Color / Primitive": {
@@ -102,6 +102,102 @@
         "base/black": {
           "type": "COLOR",
           "Default": "#000000"
+        },
+        "violet/100": {
+          "type": "COLOR",
+          "Default": "#ede9fe"
+        },
+        "violet/200": {
+          "type": "COLOR",
+          "Default": "#ddd6fe"
+        },
+        "violet/800": {
+          "type": "COLOR",
+          "Default": "#5b21b6"
+        },
+        "violet/900": {
+          "type": "COLOR",
+          "Default": "#4c1d95"
+        },
+        "green/100": {
+          "type": "COLOR",
+          "Default": "#dcfce7"
+        },
+        "green/200": {
+          "type": "COLOR",
+          "Default": "#bbf7d0"
+        },
+        "green/800": {
+          "type": "COLOR",
+          "Default": "#166534"
+        },
+        "green/900": {
+          "type": "COLOR",
+          "Default": "#14532d"
+        },
+        "red/100": {
+          "type": "COLOR",
+          "Default": "#fee2e2"
+        },
+        "red/200": {
+          "type": "COLOR",
+          "Default": "#fecaca"
+        },
+        "red/800": {
+          "type": "COLOR",
+          "Default": "#991b1b"
+        },
+        "red/900": {
+          "type": "COLOR",
+          "Default": "#7f1d1d"
+        },
+        "yellow/100": {
+          "type": "COLOR",
+          "Default": "#fef3c7"
+        },
+        "yellow/200": {
+          "type": "COLOR",
+          "Default": "#fde68a"
+        },
+        "yellow/800": {
+          "type": "COLOR",
+          "Default": "#92400e"
+        },
+        "yellow/900": {
+          "type": "COLOR",
+          "Default": "#78350f"
+        },
+        "teal/100": {
+          "type": "COLOR",
+          "Default": "#ccfbf1"
+        },
+        "teal/200": {
+          "type": "COLOR",
+          "Default": "#99f6e4"
+        },
+        "teal/800": {
+          "type": "COLOR",
+          "Default": "#115e59"
+        },
+        "teal/900": {
+          "type": "COLOR",
+          "Default": "#134e4a"
+        },
+        "pink/100": {
+          "type": "COLOR",
+          "Default": "#fce7f3"
+        },
+        "pink/200": {
+          "type": "COLOR",
+          "Default": "#fbcfe8"
+        },
+        "pink/800": {
+          "type": "COLOR",
+          "Default": "#9d174d"
+        },
+        "pink/900": {
+          "type": "COLOR",
+          "Default": "#831843"
         }
       }
     },
@@ -180,6 +276,76 @@
           "type": "COLOR",
           "Light": "→ neutral/800",
           "Dark": "→ neutral/200"
+        },
+        "Color/Badge/Azul/Background": {
+          "type": "COLOR",
+          "Light": "→ brand/100",
+          "Dark": "→ brand/900"
+        },
+        "Color/Badge/Azul/Text": {
+          "type": "COLOR",
+          "Light": "→ brand/800",
+          "Dark": "→ brand/200"
+        },
+        "Color/Badge/Violeta/Background": {
+          "type": "COLOR",
+          "Light": "→ violet/100",
+          "Dark": "→ violet/900"
+        },
+        "Color/Badge/Violeta/Text": {
+          "type": "COLOR",
+          "Light": "→ violet/800",
+          "Dark": "→ violet/200"
+        },
+        "Color/Badge/Verde/Background": {
+          "type": "COLOR",
+          "Light": "→ green/100",
+          "Dark": "→ green/900"
+        },
+        "Color/Badge/Verde/Text": {
+          "type": "COLOR",
+          "Light": "→ green/800",
+          "Dark": "→ green/200"
+        },
+        "Color/Badge/Vermelho/Background": {
+          "type": "COLOR",
+          "Light": "→ red/100",
+          "Dark": "→ red/900"
+        },
+        "Color/Badge/Vermelho/Text": {
+          "type": "COLOR",
+          "Light": "→ red/800",
+          "Dark": "→ red/200"
+        },
+        "Color/Badge/Amarelo/Background": {
+          "type": "COLOR",
+          "Light": "→ yellow/100",
+          "Dark": "→ yellow/900"
+        },
+        "Color/Badge/Amarelo/Text": {
+          "type": "COLOR",
+          "Light": "→ yellow/800",
+          "Dark": "→ yellow/200"
+        },
+        "Color/Badge/Verde-água/Background": {
+          "type": "COLOR",
+          "Light": "→ teal/100",
+          "Dark": "→ teal/900"
+        },
+        "Color/Badge/Verde-água/Text": {
+          "type": "COLOR",
+          "Light": "→ teal/800",
+          "Dark": "→ teal/200"
+        },
+        "Color/Badge/Rosa/Background": {
+          "type": "COLOR",
+          "Light": "→ pink/100",
+          "Dark": "→ pink/900"
+        },
+        "Color/Badge/Rosa/Text": {
+          "type": "COLOR",
+          "Light": "→ pink/800",
+          "Dark": "→ pink/200"
         }
       }
     },

@@ -14,7 +14,7 @@ npm run dev        # build + servidor local em http://localhost:4321
 npm run verify     # testes Playwright (com o servidor rodando)
 ```
 
-Outros scripts: `npm run build` (gera `dist/`), `npm run tokens`, `npm run placeholders`, `npm run hero-layout`, `npm run og`.
+Outros scripts: `npm run build` (gera `dist/`), `npm run tokens`, `npm run placeholders`, `npm run og`.
 
 Publicação: suba o conteúdo de `dist/`. Ele já traz `vercel.json` (Vercel), `.htaccess` (Apache/Hostinger) e `_redirects` (Netlify/Cloudflare). Nada foi publicado.
 
@@ -27,7 +27,8 @@ Publicação: suba o conteúdo de `dist/`. Ele já traz `vercel.json` (Vercel), 
 | WhatsApp, e-mail, LinkedIn, Behance, Dribbble, CVs, analytics | `src/config/site.js` |
 | Imagens (caminho + dimensões reservadas) | `src/config/assets.js` |
 | Rotas e redirecionamentos 301 | `src/lib/routes.js` |
-| Composição final das letras do hero (vinda do Figma) | `scripts/data/hero-figma.json` → `scripts/hero-layout.mjs` → `src/components/hero-layout.json` |
+| Competências do hero (badges que caem: categorias, cores, quais aparecem no celular) | `src/content/skills.js` |
+| Física da pilha do hero (gravidade, atrito, ritmo da queda) | `src/client/hero-pile.js` |
 | Parâmetros da sequência 3D (perspectiva, deslocamento, fade) | `CONFIG` em `src/client/depth-stack.js` |
 
 - **Imagens reais:** coloque o arquivo em `public/assets/…` e troque o caminho em `assets.js`. Se a proporção mudar, atualize `width`/`height`.

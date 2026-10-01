@@ -17,7 +17,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "esbuild": "^0.25.12"
+    "esbuild": "^0.25.12",
+    "matter-js": "^0.20.0"
   },
   "engines": {
     "node": ">=20"

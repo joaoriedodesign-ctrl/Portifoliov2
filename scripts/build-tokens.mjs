@@ -6,7 +6,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const figma = JSON.parse(readFileSync(new URL('../tokens/figma.tokens.json', import.meta.url)));
 const ext = JSON.parse(readFileSync(new URL('../tokens/extensions.tokens.json', import.meta.url)));
 
-const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const slug = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const WEIGHTS = { regular: 400, medium: 500, semibold: 600, bold: 700 };
 const FALLBACK = { outfit: "'Outfit', ui-sans-serif, system-ui, sans-serif", righteous: "'Righteous', 'Outfit', ui-sans-serif, sans-serif" };
 const rem = (px) => `${+(px / 16).toFixed(4)}rem`;
