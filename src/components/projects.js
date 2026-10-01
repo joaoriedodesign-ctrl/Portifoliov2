@@ -53,3 +53,22 @@ export function projectSequence(ctx, { level = 3, id = 'projetos-lista', title =
   </div>
 </div>`;
 }
+
+// Página Projetos (Figma 283:822): grade de capas 2 × 2 no desktop e uma coluna no
+// mobile, sem texto visível. O nome do projeto fica no link (leitor de tela) e no
+// alt; o título da página existe só para leitores de tela e buscadores.
+export function projectGrid(ctx) {
+  const { lang, t } = ctx;
+  return html`<section class="project-grid container" aria-labelledby="projects-title">
+  <h1 class="sr-only" id="projects-title">${t.projects.title}</h1>
+  <ul class="project-grid__list">
+    ${projectOrder.map((slug, i) => {
+      const p = projects[slug];
+      return html`<li><a class="project-grid__item" href="${path('project', lang, slug)}">
+      ${media(assets.covers[slug], `${p.name} — ${p[lang].category}`, { priority: i < 2, cls: 'project-grid__img', sizes: '(min-width: 64rem) 50vw, 100vw' })}
+      <span class="sr-only">${t.ui.viewProject}: ${p.name}</span>
+    </a></li>`;
+    })}
+  </ul>
+</section>`;
+}

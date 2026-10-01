@@ -131,6 +131,35 @@
         "easing/out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
         "easing/in-out": "cubic-bezier(0.65, 0, 0.35, 1)"
       }
+    },
+    "Color / Primitive (extensão)": {
+      "$note": "Proposta de 01/10/2026: paleta Céu (sky) para o badge de IA Aplicada, que no Figma usa Vermelho. Mesma lógica das outras cores de badge (100/200/800/900).",
+      "modes": [
+        "Default"
+      ],
+      "variables": {
+        "sky/100": "#e0f2fe",
+        "sky/200": "#bae6fd",
+        "sky/800": "#075985",
+        "sky/900": "#0c4a6e"
+      }
+    },
+    "Color / Badge (extensão)": {
+      "$note": "Proposta de 01/10/2026: Color/Badge/Céu para a categoria IA Aplicada (o vermelho foi descartado por ler como erro). Recriar no Figma em Color / Semantic se aprovado.",
+      "modes": [
+        "Light",
+        "Dark"
+      ],
+      "variables": {
+        "Color/Badge/Céu/Background": {
+          "Light": "→ sky/100",
+          "Dark": "→ sky/900"
+        },
+        "Color/Badge/Céu/Text": {
+          "Light": "→ sky/800",
+          "Dark": "→ sky/200"
+        }
+      }
     }
   }
 }

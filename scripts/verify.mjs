@@ -111,7 +111,7 @@ for (const width of [360, 768, 1440]) {
   ok(afterClick === 1 && page.url() === BASE + '/', `clique no card do fundo: ativo ${afterClick}, url ${page.url()}`);
   await page.evaluate((y) => window.scrollTo(0, y), info.top + info.h + 200);
   await page.waitForTimeout(100);
-  const released = await page.evaluate(() => document.querySelector('#home-contato').getBoundingClientRect().top < window.innerHeight);
+  const released = await page.evaluate(() => document.querySelector('.testimonials').getBoundingClientRect().top < window.innerHeight);
   ok(released, 'fluxo não liberado após o último projeto');
   // Menu mobile por teclado
   await page.setViewportSize({ width: 390, height: 800 });
@@ -140,8 +140,8 @@ for (const width of [360, 768, 1440]) {
   await page.goto(BASE + '/');
   await page.waitForTimeout(200);
   const r = await page.evaluate(() => ({
-    settled: document.querySelector('[data-fall]').classList.contains('is-settled'),
-    visible: getComputedStyle(document.querySelector('.glyph')).visibility,
+    settled: document.querySelector('[data-pile]').classList.contains('is-static'),
+    visible: getComputedStyle(document.querySelector('.skill')).visibility,
     is3d: document.querySelector('[data-depth]').classList.contains('is-3d'),
     styleH: document.querySelector('[data-depth]').style.height,
     intro: getComputedStyle(document.querySelector('.hero__intro .btn')).opacity,
@@ -156,29 +156,51 @@ for (const width of [360, 768, 1440]) {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, javaScriptEnabled: false });
   const page = await ctx.newPage();
   await page.goto(BASE + '/');
-  const vis = await page.evaluate(() => getComputedStyle(document.querySelector('.glyph')).visibility);
-  ok(vis === 'visible', `sem JS: letras ${vis}`);
+  const vis = await page.evaluate(() => getComputedStyle(document.querySelector('.skill')).visibility);
+  ok(vis === 'visible', `sem JS: badges ${vis}`);
   const cta = await page.evaluate(() => getComputedStyle(document.querySelector('.hero__intro .btn')).opacity);
   ok(cta === '1', `sem JS: textos do hero com opacidade ${cta}`);
   await ctx.close();
 }
 
-// Sequência do hero: letras primeiro, textos depois; foco por teclado revela na hora
+// Sequência do hero: badges caem primeiro, textos depois; foco por teclado revela na hora
 {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const page = await ctx.newPage();
   await page.goto(BASE + '/');
   await page.waitForTimeout(300);
   const early = await page.evaluate(() => document.querySelector('[data-hero]').classList.contains('is-revealed'));
-  ok(!early, 'hero: textos não deveriam aparecer antes das letras');
+  ok(!early, 'hero: textos não deveriam aparecer antes das badges');
   await page.waitForTimeout(2600);
   const late = await page.evaluate(() => ({ rev: document.querySelector('[data-hero]').classList.contains('is-revealed'), op: getComputedStyle(document.querySelector('.hero__intro .btn')).opacity }));
   ok(late.rev && late.op === '1', `hero: textos deveriam estar visíveis após a queda ${JSON.stringify(late)}`);
+  // Pilha física: badges assentadas dentro do palco e simulação parada
+  await page.waitForTimeout(6000);
+  const pile = await page.evaluate(() => {
+    const art = document.querySelector('[data-pile]');
+    const a = art.getBoundingClientRect();
+    const out = [...art.querySelectorAll('.skill')].filter((el) => { const r = el.getBoundingClientRect(); return r.bottom > a.bottom + 16 || r.right > window.innerWidth + 16; }).length; // folga: a caixa de uma pílula girada passa do contorno visível
+    return { live: art.classList.contains('is-live'), settled: art.classList.contains('is-settled'), out };
+  });
+  ok(pile.live && pile.settled && pile.out === 0, `hero: pilha deveria assentar dentro do palco ${JSON.stringify(pile)}`);
   await page.goto(BASE + '/');
   await page.waitForTimeout(150);
   for (let i = 0; i < 12; i++) { await page.keyboard.press('Tab'); if (await page.evaluate(() => !!document.activeElement.closest('.hero'))) break; }
   const kb = await page.evaluate(() => document.querySelector('[data-hero]').classList.contains('is-revealed'));
   ok(kb, 'hero: foco por teclado deveria revelar os textos');
+  await ctx.close();
+}
+
+// Depoimentos: carrossel avança um item e desabilita nas pontas
+{
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const page = await ctx.newPage();
+  await page.goto(BASE + '/');
+  await page.locator('.testimonials').scrollIntoViewIfNeeded();
+  const before = await page.evaluate(() => ({ nav: !document.querySelector('[data-carousel-nav]').hidden, prev: document.querySelector('[data-carousel-prev]').disabled }));
+  await page.click('[data-carousel-next]'); await page.waitForTimeout(700);
+  const x = await page.evaluate(() => document.querySelector('[data-carousel-track]').scrollLeft);
+  ok(before.nav && before.prev && x > 100, `depoimentos: navegação ${JSON.stringify(before)}, scroll ${x}`);
   await ctx.close();
 }
 

@@ -1,11 +1,12 @@
 // Ponto de entrada do front-end. Cada módulo é opcional: só inicia se a
 // marcação correspondente existir, e expõe destroy() para limpeza.
 import { initHeader, initMenu } from './nav.js';
-import { initHeroFall } from './hero-fall.js';
+import { initHeroPile } from './hero-pile.js';
 import { initDepthStacks } from './depth-stack.js';
 import { initDemos } from './demo-viewer.js';
 import { initContactForms } from './contact-form.js';
 import { initBackLinks } from './back-link.js';
+import { initCarousels } from './carousel.js';
 
 window.__appReady = true;
 
@@ -14,11 +15,12 @@ function boot() {
   const run = (fn) => { try { const c = fn(); if (c) controllers.push(...[].concat(c)); } catch (e) { console.error(e); } };
   run(initHeader);
   run(initMenu);
-  run(initHeroFall);
+  run(initHeroPile);
   run(initDepthStacks);
   run(initDemos);
   run(initContactForms);
   run(initBackLinks);
+  run(initCarousels);
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });
 }
 

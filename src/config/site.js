@@ -23,7 +23,7 @@ export const site = {
   // Downloads de CV: indisponíveis até os arquivos existirem em public/assets/docs/.
   cv: {
     pt: '/assets/docs/joao-riedo-cv-pt.pdf',
-    en: '/assets/docs/joao-riedo-cv-en.pdf', // gerado por scripts/cv-en.py a partir do CV em português
+    en: '/assets/docs/joao-riedo-cv-en.pdf', // os dois PDFs são gerados por scripts/cv.py a partir do CV base
   },
 
   // Analytics desativado nesta versão.

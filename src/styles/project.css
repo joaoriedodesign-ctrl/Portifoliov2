@@ -124,6 +124,12 @@ html:not(.js) .demo__frame[data-state='loading'] .demo__state--unavailable { dis
   .project__section .section-note { margin-top: 0; }
 }
 
+/* Desafio → Solução → Resultado */
+.prose--stack { display: grid; gap: var(--space-16); }
+.project__body { display: grid; gap: var(--space-32); min-width: 0; }
+.project__intro { color: var(--color-text-primary); }
+.project__body .section-note { margin: 0 0 calc(var(--space-16) * -1); }
+
 .decisions { counter-reset: d; border-top: var(--border-hairline) solid var(--color-background-border); }
 .decisions__item {
   display: grid; grid-template-columns: 3rem minmax(0, 1fr); column-gap: var(--space-16); row-gap: var(--space-8);

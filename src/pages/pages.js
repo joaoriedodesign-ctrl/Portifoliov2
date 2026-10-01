@@ -6,7 +6,8 @@ import { site } from '../config/site.js';
 import { assets } from '../config/assets.js';
 import { page } from '../components/layout.js';
 import { hero } from '../components/hero.js';
-import { projectSequence } from '../components/projects.js';
+import { projectSequence, projectGrid } from '../components/projects.js';
+import { testimonialsSection } from '../components/testimonials.js';
 import { contactForm } from '../components/contact-form.js';
 import { demoViewer } from '../components/demo-viewer.js';
 import { screenGallery } from '../components/screen-gallery.js';
@@ -18,17 +19,14 @@ export function home(ctx) {
   const main = html`${hero(ctx)}
 <section class="selected" aria-labelledby="selected-title">
   ${projectSequence(ctx, { level: 3, id: 'selecionados', title: t.home.selectedTitle, titleId: 'selected-title' })}
-  <div class="container selected__foot">
-    <a class="text-link" href="${path('projects', lang)}">${t.home.allProjects}${icons.arrowRight()}</a>
-  </div>
 </section>
-${contactForm(ctx, { id: 'home-contato' })}`;
+${testimonialsSection(ctx)}`;
   return page(ctx, t.meta.home, main, { bodyClass: 'page-home' });
 }
 
 export function projectsPage(ctx) {
   const { t } = ctx;
-  const main = html`${projectSequence(ctx, { level: 2, id: 'todos-projetos', title: t.projects.title, titleId: 'projects-title', titleTag: 'h1' })}`;
+  const main = html`${projectGrid(ctx)}`;
   return page(ctx, t.meta.projects, main, { bodyClass: 'page-projects' });
 }
 
@@ -72,24 +70,30 @@ export function projectPage(ctx) {
 
   <div class="container">${p.demo ? demoViewer(ctx, slug, p) : screenGallery(ctx, slug, p)}</div>
 
-  <section class="project__section container" aria-labelledby="ctx-title">
-    <h2 class="section-title" id="ctx-title">${pt.contextTitle}</h2>
-    <p class="prose">${c.context}</p>
+  <section class="project__section container" aria-labelledby="challenge-title">
+    <h2 class="section-title" id="challenge-title">${pt.challengeTitle}</h2>
+    <div class="prose prose--stack">${c.challenge.map((p) => html`<p>${p}</p>`)}</div>
   </section>
 
-  <section class="project__section container" aria-labelledby="dec-title">
-    <h2 class="section-title" id="dec-title">${pt.decisionsTitle}</h2>
-    <ol class="decisions">
-      ${c.decisions.map((d, i) => html`<li class="decisions__item"><span class="decisions__n" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><h3 class="decisions__title">${d.title}</h3><p class="decisions__text">${d.text}</p></li>`)}
-    </ol>
+  <section class="project__section container" aria-labelledby="solution-title">
+    <h2 class="section-title" id="solution-title">${pt.solutionTitle}</h2>
+    <div class="project__body">
+      ${c.solution.intro ? html`<p class="prose project__intro">${c.solution.intro}</p>` : ''}
+      <ol class="decisions">
+        ${c.solution.steps.map((d, i) => html`<li class="decisions__item"><span class="decisions__n" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><h3 class="decisions__title">${d.title}</h3><p class="decisions__text">${d.text}</p></li>`)}
+      </ol>
+    </div>
   </section>
 
-  <section class="project__section container" aria-labelledby="num-title">
-    <h2 class="section-title" id="num-title">${pt.numbersTitle}</h2>
-    ${c.numbersNote === null ? '' : html`<p class="section-note">${c.numbersNote ?? pt.numbersNote}</p>`}
-    <dl class="numbers">
-      ${c.numbers.map((n) => html`<div class="numbers__item"><dt>${n.label}</dt><dd>${n.value}</dd></div>`)}
-    </dl>
+  <section class="project__section container" aria-labelledby="result-title">
+    <h2 class="section-title" id="result-title">${pt.resultTitle}</h2>
+    <div class="project__body">
+      <div class="prose prose--stack">${c.result.text.map((p) => html`<p>${p}</p>`)}</div>
+      ${c.result.numbersNote === null ? '' : html`<p class="section-note project__note">${c.result.numbersNote ?? pt.numbersNote}</p>`}
+      <dl class="numbers">
+        ${c.result.numbers.map((n) => html`<div class="numbers__item"><dt>${n.label}</dt><dd>${n.value}</dd></div>`)}
+      </dl>
+    </div>
   </section>
 
   <nav class="next container" aria-label="${pt.next}">
@@ -101,8 +105,7 @@ export function projectPage(ctx) {
       ${icons.arrowRight()}
     </a>
   </nav>
-</article>
-${contactForm(ctx, { id: 'projeto-contato' })}`;
+</article>`;
   return page(ctx, { title: `${p.name} — ${c.category} · João Riedo`, description: c.summary }, main, { bodyClass: 'page-project' });
 }
 
@@ -135,7 +138,7 @@ export function aboutPage(ctx) {
 
 <section class="about-section container" aria-labelledby="time-title">
   <h2 class="section-title" id="time-title">${a.timelineTitle}</h2>
-  <ol class="timeline">${a.timeline.map((r) => html`<li class="timeline__row"><span class="timeline__org">${r.org}</span><span class="timeline__role">${r.role}</span><span class="timeline__period">${r.period}</span></li>`)}</ol>
+  <ol class="timeline">${a.timeline.map((r) => html`<li class="timeline__row"><span class="timeline__org">${r.org}</span><span class="timeline__role">${r.role}</span><span class="timeline__period">${r.period}</span>${r.note ? html`<span class="timeline__note">${r.note}</span>` : ''}</li>`)}</ol>
 </section>
 
 <section class="about-section container about-split" aria-labelledby="edu-title">
@@ -144,10 +147,12 @@ export function aboutPage(ctx) {
     <ul class="timeline timeline--compact">${a.education.map((e) => html`<li class="timeline__row"><span class="timeline__org">${e.org}</span><span class="timeline__role">${e.course}</span><span class="timeline__period">${e.period}</span></li>`)}</ul>
     <h3 class="label-title skills-title">${a.skillsTitle}</h3>
     <ul class="tags">${a.skills.map((sk) => html`<li class="tag">${sk}</li>`)}</ul>
+    <h3 class="label-title skills-title">${a.languagesTitle}</h3>
+    <p class="languages">${a.languages}</p>
   </div>
   <div>
     <h2 class="section-title" id="cert-title">${a.certificationsTitle}</h2>
-    <ul class="timeline timeline--compact">${a.certifications.map((c) => html`<li class="timeline__row"><span class="timeline__org">${c.name}</span><span class="timeline__role">${c.issuer}</span><span class="timeline__period">${linkOrPending({ href: c.url, label: a.verify, pendingLabel: t.ui.linkPending })}</span></li>`)}</ul>
+    <ul class="timeline timeline--compact">${a.certifications.map((c) => html`<li class="timeline__row"><span class="timeline__org">${c.name}</span><span class="timeline__role">${c.issuer}</span><span class="timeline__period">${c.noLink ? '' : linkOrPending({ href: c.url, label: a.verify, pendingLabel: t.ui.linkPending })}</span></li>`)}</ul>
   </div>
 </section>
 
@@ -173,7 +178,6 @@ export function aboutPage(ctx) {
 export function contactPage(ctx) {
   const { t, lang } = ctx;
   const main = html`<div class="contact-page container">
-  <a class="back-link" href="${path('home', lang)}" data-back>${icons.arrowLeft()}${t.ui.back}</a>
   <h1 class="page-title">${t.contact.title}</h1>
   <p class="lead">${t.contact.text}</p>
 </div>
