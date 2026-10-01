@@ -27,6 +27,30 @@
   --color-neutral-950: #202020;
   --color-base-white: #ffffff;
   --color-base-black: #000000;
+  --color-violet-100: #ede9fe;
+  --color-violet-200: #ddd6fe;
+  --color-violet-800: #5b21b6;
+  --color-violet-900: #4c1d95;
+  --color-green-100: #dcfce7;
+  --color-green-200: #bbf7d0;
+  --color-green-800: #166534;
+  --color-green-900: #14532d;
+  --color-red-100: #fee2e2;
+  --color-red-200: #fecaca;
+  --color-red-800: #991b1b;
+  --color-red-900: #7f1d1d;
+  --color-yellow-100: #fef3c7;
+  --color-yellow-200: #fde68a;
+  --color-yellow-800: #92400e;
+  --color-yellow-900: #78350f;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fbcfe8;
+  --color-pink-800: #9d174d;
+  --color-pink-900: #831843;
 
   /* Figma · Color / Semantic */
   --color-background: var(--color-neutral-50);
@@ -43,6 +67,20 @@
   --color-primary-hovered: var(--color-brand-700);
   --color-secondary-default: var(--color-neutral-950);
   --color-secondary-hovered: var(--color-neutral-800);
+  --color-badge-azul-background: var(--color-brand-100);
+  --color-badge-azul-text: var(--color-brand-800);
+  --color-badge-violeta-background: var(--color-violet-100);
+  --color-badge-violeta-text: var(--color-violet-800);
+  --color-badge-verde-background: var(--color-green-100);
+  --color-badge-verde-text: var(--color-green-800);
+  --color-badge-vermelho-background: var(--color-red-100);
+  --color-badge-vermelho-text: var(--color-red-800);
+  --color-badge-amarelo-background: var(--color-yellow-100);
+  --color-badge-amarelo-text: var(--color-yellow-800);
+  --color-badge-verde-agua-background: var(--color-teal-100);
+  --color-badge-verde-agua-text: var(--color-teal-800);
+  --color-badge-rosa-background: var(--color-pink-100);
+  /* Color/Badge/Rosa/Text: substituído pela extensão (override) */
 
   /* Figma · Typography / Primitive */
   --font-family-outfit: 'Outfit', ui-sans-serif, system-ui, sans-serif;
@@ -224,6 +262,20 @@
   --duration-600: 600ms;
   --easing-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --easing-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Extensão do código (não existe no Figma) · Color / Primitive (extensão) */
+  --color-sky-100: #e0f2fe;
+  --color-sky-200: #bae6fd;
+  --color-sky-800: #075985;
+  --color-sky-900: #0c4a6e;
+  --color-pink-700: #be185d;
+
+  /* Extensão do código (não existe no Figma) · Color / Badge (extensão) */
+  --color-badge-ceu-background: var(--color-sky-100);
+  --color-badge-ceu-text: var(--color-sky-800);
+
+  /* Extensão do código (não existe no Figma) · Color / Badge (override do código) */
+  --color-badge-rosa-text: var(--color-pink-700);
 }
 
 /* Figma · Color / Semantic — modo Dark (preservado, não ativado por padrão) */
@@ -242,9 +294,25 @@
   --color-primary-hovered: var(--color-brand-400);
   --color-secondary-default: var(--color-neutral-50);
   --color-secondary-hovered: var(--color-neutral-200);
+  --color-badge-azul-background: var(--color-brand-900);
+  --color-badge-azul-text: var(--color-brand-200);
+  --color-badge-violeta-background: var(--color-violet-900);
+  --color-badge-violeta-text: var(--color-violet-200);
+  --color-badge-verde-background: var(--color-green-900);
+  --color-badge-verde-text: var(--color-green-200);
+  --color-badge-vermelho-background: var(--color-red-900);
+  --color-badge-vermelho-text: var(--color-red-200);
+  --color-badge-amarelo-background: var(--color-yellow-900);
+  --color-badge-amarelo-text: var(--color-yellow-200);
+  --color-badge-verde-agua-background: var(--color-teal-900);
+  --color-badge-verde-agua-text: var(--color-teal-200);
+  --color-badge-rosa-background: var(--color-pink-900);
   --color-on-primary: var(--color-base-white);
   --color-on-primary-secondary: var(--color-brand-100);
   --color-focus-ring: var(--color-brand-300);
   --color-selection: var(--color-brand-800);
   --color-shadow: var(--color-base-black);
+  --color-badge-ceu-background: var(--color-sky-900);
+  --color-badge-ceu-text: var(--color-sky-200);
+  --color-badge-rosa-text: var(--color-pink-200);
 }
