@@ -41,5 +41,13 @@ export const redirects = [
   ...projectOrder.map((slug) => ({ from: `/en/case-studies/${slug}`, to: `/en/projects/${slug}` })),
   { from: '/en/case-studies/zentupet', to: '/en/projects' },
   { from: '/en/sobre', to: '/en/about' },
+  // Projetos fictícios removidos em 13/10/2026: páginas de case e sites hospedados
+  ...['dr-carlos-mattos', 'marina-alves'].flatMap((slug) => [
+    { from: `/projetos/${slug}`, to: '/projetos' },
+    { from: `/en/projects/${slug}`, to: '/en/projects' },
+    { from: `/case-studies/${slug}`, to: '/projetos' },
+    { from: `/en/case-studies/${slug}`, to: '/en/projects' },
+    { from: `/projects/${slug}`, to: '/projetos' },
+  ]),
   { from: '/en/contato', to: '/en/contact' },
 ];

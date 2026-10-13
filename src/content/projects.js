@@ -5,7 +5,9 @@
 // medido, o resultado descreve a entrega e os números descrevem o escopo.
 
 // Ordem de exibição (Home, /projetos e "Próximo projeto" em loop).
-export const projectOrder = ['instituto-mais', 'multi-tenant-design-system', 'dr-carlos-mattos', 'marina-alves'];
+// Dr. Carlos Mattos e Marina Alves (projetos fictícios) saíram em 13/10/2026; os
+// endereços antigos redirecionam para /projetos (src/lib/routes.js).
+export const projectOrder = ['instituto-mais', 'multi-tenant-design-system', 'retention-system', 'exclusive-games'];
 
 export const projects = {
   // Case de sistema (sem site navegável): no lugar da demonstração, mostra telas reais.
@@ -153,122 +155,199 @@ export const projects = {
     },
   },
 
-  'dr-carlos-mattos': {
-    slug: 'dr-carlos-mattos',
-    name: 'Dr. Carlos Mattos',
+  // Cases de gamificação (Play4tune): sem site navegável, mostram telas mobile reais
+  // agrupadas por módulo. Sem métrica de negócio medida: os números descrevem o escopo.
+  'retention-system': {
+    slug: 'retention-system',
+    name: 'Retention System Play4tune',
     year: 2026,
-    // Documento independente hospedado no próprio domínio (sem header/footer do portfólio).
-    live: { href: '/projects/dr-carlos-mattos/', external: false, hosted: true },
-    demo: { embedUrl: '/projects/dr-carlos-mattos/' },
+    live: null,
+    demo: null,
     extras: [],
+    screens: [
+      { key: 'hub', items: ['hub'] },
+      { key: 'missions', items: ['missions', 'missions-expanded'] },
+      { key: 'store', items: ['store', 'store-item', 'store-cart-widget', 'store-cart-widget-expanded', 'store-cart', 'store-purchase-confirmed'] },
+      { key: 'tournaments', items: ['tournament', 'tournament-leaderboard', 'tournament-games', 'tournament-rules'] },
+      { key: 'profile', items: ['profile', 'profile-avatar'] },
+    ],
     pt: {
-      category: 'Landing page',
-      subtitle: 'Desenhei e desenvolvi a landing page de um consultório de psiquiatria em Curitiba.',
-      summary: 'Desenhei e desenvolvi a landing page de um consultório de psiquiatria em Curitiba, com toda a jornada levando a um único canal: o WhatsApp.',
-      facts: { role: 'UX/UI + front-end', duration: 'Menos de 1 mês', platform: 'Landing page responsiva', team: 'Eu + o cliente' },
-      challenge: ['Procurar um psiquiatra costuma começar com dúvida e hesitação. A landing page precisava ajudar a pessoa a se reconhecer no que lê, construir confiança e oferecer um único próximo passo claro.'],
+      category: 'Gamificação',
+      subtitle: 'Desenhei de ponta a ponta o sistema de retenção mobile da Play4tune: missões, torneios, loja e perfil conectados por um HUB.',
+      summary: 'Desenhei de ponta a ponta um loop de gamificação mobile com 5 módulos e 15 telas, em que missões e torneios geram moedas que viram giros nos slots favoritos do jogador.',
+      facts: { role: 'Product Designer · ponta a ponta', duration: 'fev–set/2026', platform: 'Mobile', team: 'Eu (design) + Produto + Engenharia' },
+      galleryTitle: 'Telas em produção',
+      galleryCaption: 'Telas reais do sistema, organizadas por módulo, construídas com os tokens e componentes do Design System multi-tenant.',
+      groups: {
+        hub: { title: 'HUB', text: 'O centro do loop: acesso aos quatro módulos e saldo de moedas sempre à vista.' },
+        missions: { title: 'Missões', text: 'Missões ativas, com progresso e recompensa em cada card.' },
+        store: { title: 'Loja', text: 'Do catálogo à confirmação, com o carrinho também disponível em um widget.' },
+        tournaments: { title: 'Torneios', text: 'Lista de torneios e, no detalhe, ranking, jogos elegíveis e regras, com o prêmio fixo no topo.' },
+        profile: { title: 'Perfil', text: 'Ranking, nível e histórico de missões, compras e torneios.' },
+      },
+      screenLabels: {
+        hub: 'HUB', missions: 'Missões', 'missions-expanded': 'Missão expandida',
+        store: 'Loja', 'store-item': 'Detalhe do item', 'store-cart-widget': 'Widget do carrinho', 'store-cart-widget-expanded': 'Widget expandido', 'store-cart': 'Carrinho', 'store-purchase-confirmed': 'Compra confirmada',
+        tournament: 'Torneio', 'tournament-leaderboard': 'Ranking', 'tournament-games': 'Jogos elegíveis', 'tournament-rules': 'Regras',
+        profile: 'Perfil', 'profile-avatar': 'Escolha de avatar',
+      },
+      challenge: [
+        'Num cassino online, o jogador costuma entrar, jogar e sair. A Play4tune precisava de um motivo para ele voltar que não dependesse só de bônus de depósito.',
+        'O desafio de design era reunir missões, torneios, uma loja de recompensas e o perfil do jogador em um único sistema, sem espalhar cinco mecânicas novas pela interface do cassino e sem exigir que o jogador entendesse regras complicadas para participar.',
+      ],
       solution: {
-        intro: 'Desenhei a página em torno de uma decisão difícil e desenvolvi o front-end sem frameworks.',
+        intro: 'Conduzi o design do sistema inteiro, do fluxo às telas finais, em parceria com Produto e Engenharia e sobre a base do Design System multi-tenant.',
         steps: [
-          { title: 'Identificação inicial', text: 'Abri a página pelo que a pessoa está vivendo, para que ela se reconhecesse antes de qualquer apresentação do consultório.' },
-          { title: 'Canal único de conversão', text: 'Fiz toda a jornada levar ao mesmo lugar, o WhatsApp, sem formulários concorrentes nem caminhos paralelos.' },
-          { title: 'Confiança antes do clique', text: 'Posicionei as informações que sustentam a decisão antes do pedido de contato.' },
-          { title: 'Leveza e acessibilidade', text: 'Escrevi um código enxuto, sem frameworks, e tratei acessibilidade como requisito desde o início.' },
+          { title: 'Um HUB como centro do loop', text: 'Concentrei os módulos em um HUB. Dali o jogador chega a missões, torneios, loja e perfil com um toque e vê o saldo de moedas logo no topo, sem precisar procurar cada mecânica pela plataforma.' },
+          { title: 'A moeda como fio condutor', text: 'Fiz a moeda ligar os módulos: missões e torneios pagam moedas, a loja converte essas moedas em giros nos slots favoritos e o perfil fecha o ciclo com ranking, nível e histórico.' },
+          { title: 'Compra sem sair do contexto', text: 'Na loja, levei o carrinho também para um widget com notificação, para o jogador continuar navegando pelo catálogo antes de finalizar a compra.' },
+          { title: 'Torneios fáceis de acompanhar', text: 'Separei a lista de torneios do detalhe de cada um. No detalhe, organizei ranking, jogos elegíveis e regras em três abas e mantive o prêmio total fixo no topo de todas elas.' },
         ],
       },
       result: {
-        text: ['Entreguei em menos de um mês uma landing page leve e responsiva, com seis pontos de contato que levam ao WhatsApp e atendimento presencial e online apresentados lado a lado.'],
+        text: ['O sistema entrou em produção na Play4tune com os cinco módulos conectados pelo HUB. Como usei os mesmos tokens e componentes do Design System multi-tenant, as telas novas seguiram o padrão da plataforma sem criar uma interface paralela.'],
         numbers: [
-          { value: '6', label: 'seções' },
-          { value: '6', label: 'pontos de contato no WhatsApp' },
-          { value: '2', label: 'modalidades' },
-          { value: '0', label: 'frameworks' },
+          { value: '5', label: 'módulos conectados pelo HUB' },
+          { value: '15', label: 'telas mobile' },
+          { value: '1', label: 'moeda para todo o loop' },
+          { value: '3', label: 'abas em cada torneio' },
         ],
       },
     },
     en: {
-      category: 'Landing page',
-      subtitle: 'I designed and built the landing page for a psychiatry practice in Curitiba, Brazil.',
-      summary: 'I designed and built the landing page for a psychiatry practice in Curitiba, with the whole journey leading to a single channel: WhatsApp.',
-      facts: { role: 'UX/UI + front-end', duration: 'Less than 1 month', platform: 'Responsive landing page', team: 'Me + the client' },
-      challenge: ['Looking for a psychiatrist usually starts with doubt and hesitation. The landing page had to help visitors recognize themselves in what they read, build trust and offer one clear next step.'],
+      category: 'Gamification',
+      subtitle: 'I designed Play4tune’s mobile retention system end to end: missions, tournaments, store and profile connected by a HUB.',
+      summary: 'I designed a mobile gamification loop end to end, with 5 modules and 15 screens, where missions and tournaments pay out coins that become spins on the player’s favorite slots.',
+      facts: { role: 'Product Designer · end to end', duration: 'Feb–Sep 2026', platform: 'Mobile', team: 'Me (design) + Product + Engineering' },
+      galleryTitle: 'Screens in production',
+      galleryCaption: 'Real screens from the system, grouped by module and built with the multi-tenant Design System’s tokens and components.',
+      groups: {
+        hub: { title: 'HUB', text: 'The center of the loop: access to all four modules, with the coin balance always in view.' },
+        missions: { title: 'Missions', text: 'Active missions, with progress and reward on every card.' },
+        store: { title: 'Store', text: 'From catalog to confirmation, with the cart also available as a widget.' },
+        tournaments: { title: 'Tournaments', text: 'Tournament list and, in the detail, leaderboard, eligible games and rules, with the prize pinned to the top.' },
+        profile: { title: 'Profile', text: 'Ranking, level and a history of missions, purchases and tournaments.' },
+      },
+      screenLabels: {
+        hub: 'HUB', missions: 'Missions', 'missions-expanded': 'Expanded mission',
+        store: 'Store', 'store-item': 'Item detail', 'store-cart-widget': 'Cart widget', 'store-cart-widget-expanded': 'Expanded widget', 'store-cart': 'Cart', 'store-purchase-confirmed': 'Purchase confirmed',
+        tournament: 'Tournament', 'tournament-leaderboard': 'Leaderboard', 'tournament-games': 'Eligible games', 'tournament-rules': 'Rules',
+        profile: 'Profile', 'profile-avatar': 'Avatar selection',
+      },
+      challenge: [
+        'In an online casino, players tend to log in, play and leave. Play4tune needed a reason for them to come back that didn’t rely on deposit bonuses alone.',
+        'The design challenge was to bring missions, tournaments, a rewards store and the player profile into a single system, without scattering five new mechanics across the casino interface and without asking players to learn complicated rules to take part.',
+      ],
       solution: {
-        intro: 'I designed the page around a difficult decision and built the front-end with no frameworks.',
+        intro: 'I led the design of the whole system, from flows to final screens, together with Product and Engineering and on top of the multi-tenant Design System.',
         steps: [
-          { title: 'Starting with recognition', text: 'I opened the page with what the visitor is going through, so they would recognize themselves before any introduction of the practice.' },
-          { title: 'A single conversion channel', text: 'I made the whole journey lead to the same place, WhatsApp, with no competing forms or parallel paths.' },
-          { title: 'Trust before the click', text: 'I placed the information that supports the decision before the request to get in touch.' },
-          { title: 'Light and accessible', text: 'I wrote lean code with no frameworks and treated accessibility as a requirement from the start.' },
+          { title: 'A HUB at the center of the loop', text: 'I brought the modules together in a HUB. From there, players reach missions, tournaments, store and profile in one tap and see their coin balance at the top, without hunting for each mechanic across the platform.' },
+          { title: 'Coins as the common thread', text: 'I made coins connect the modules: missions and tournaments pay out coins, the store turns them into spins on favorite slots, and the profile closes the cycle with ranking, level and history.' },
+          { title: 'Buying without losing context', text: 'In the store, I also put the cart in a widget with a notification, so players can keep browsing the catalog before checking out.' },
+          { title: 'Tournaments that are easy to follow', text: 'I separated the tournament list from each tournament’s detail. In the detail, I organized leaderboard, eligible games and rules into three tabs and kept the total prize pinned to the top of all of them.' },
         ],
       },
       result: {
-        text: ['In less than a month, I delivered a light, responsive landing page with six touchpoints leading to WhatsApp and in-person and online care presented side by side.'],
+        text: ['The system went into production at Play4tune with all five modules connected by the HUB. Because I used the same tokens and components as the multi-tenant Design System, the new screens followed the platform’s standard instead of creating a parallel interface.'],
         numbers: [
-          { value: '6', label: 'sections' },
-          { value: '6', label: 'WhatsApp touchpoints' },
-          { value: '2', label: 'appointment types' },
-          { value: '0', label: 'frameworks' },
+          { value: '5', label: 'modules connected by the HUB' },
+          { value: '15', label: 'mobile screens' },
+          { value: '1', label: 'currency for the whole loop' },
+          { value: '3', label: 'tabs in every tournament' },
         ],
       },
     },
   },
 
-  'marina-alves': {
-    slug: 'marina-alves',
-    name: 'Marina Alves',
+  'exclusive-games': {
+    slug: 'exclusive-games',
+    name: 'Exclusive Games Play4tune',
     year: 2026,
-    concept: true, // exibe o selo "Projeto conceito — persona fictícia"
-    live: { href: '/projects/marina-alves/', external: false, hosted: true },
-    demo: { embedUrl: '/projects/marina-alves/' },
-    // Botão de mídia kit: fica indisponível enquanto o PDF não existir em public/.
-    extras: [{ key: 'mediaKit', href: '/projects/marina-alves/assets/docs/marina-alves-media-kit.pdf', hosted: true }],
+    live: null,
+    demo: null,
+    extras: [],
+    screens: [
+      { key: 'roulette', items: ['roulette-purchase', 'roulette-play', 'roulette-reward'] },
+      { key: 'mystery-box', items: ['mystery-box-purchase', 'mystery-box-play', 'mystery-box-reward'] },
+      { key: 'scratch-card', items: ['scratch-card-purchase', 'scratch-card-play', 'scratch-card-reward'] },
+    ],
     pt: {
-      category: 'Mídia kit',
-      subtitle: 'Concebi um media kit em formato de landing page como proposta de produto para influenciadores.',
-      summary: 'Concebi um media kit online para uma persona de skincare, com métricas, audiência e pacotes contratáveis pelo WhatsApp.',
-      facts: { role: 'UX/UI + front-end', duration: 'Menos de 1 mês', platform: 'Web responsiva', team: 'Projeto autoral' },
-      challenge: ['Um media kit em PDF costuma ser lido às pressas por quem decide uma parceria. Quis testar um formato que facilitasse a avaliação por marcas e funcionasse bem dentro do navegador do Instagram.'],
+      category: 'Minigames',
+      subtitle: 'Desenhei três minigames dentro do HUB de gamificação da Play4tune: Roleta, Caixa Misteriosa e Raspadinha.',
+      summary: 'Desenhei de ponta a ponta três minigames mobile em que o jogador troca as moedas de missões e torneios por prêmios, sempre no mesmo loop de compra, jogo e recompensa.',
+      facts: { role: 'Product Designer · ponta a ponta', duration: 'fev–set/2026', platform: 'Mobile', team: 'Eu (design) + Produto + Engenharia' },
+      galleryTitle: 'Telas em produção',
+      galleryCaption: 'Cada minigame do começo ao fim: compra, jogo e recompensa.',
+      groups: {
+        roulette: { title: 'Roleta', text: 'Comprar um giro, ver a roleta girar e receber o prêmio.' },
+        'mystery-box': { title: 'Caixa Misteriosa', text: 'Comprar uma caixa, abrir e revelar o que tem dentro.' },
+        'scratch-card': { title: 'Raspadinha', text: 'Comprar uma cartela, raspar e descobrir o prêmio.' },
+      },
+      screenLabels: {
+        'roulette-purchase': 'Compra', 'roulette-play': 'Jogo', 'roulette-reward': 'Recompensa',
+        'mystery-box-purchase': 'Compra', 'mystery-box-play': 'Jogo', 'mystery-box-reward': 'Recompensa',
+        'scratch-card-purchase': 'Compra', 'scratch-card-play': 'Jogo', 'scratch-card-reward': 'Recompensa',
+      },
+      challenge: [
+        'As moedas que o jogador ganhava em missões e torneios precisavam de mais um destino além da loja: algo rápido e divertido de jogar dentro da própria plataforma.',
+        'Cada minigame trazia uma mecânica diferente. O risco era criar três jogos que precisassem ser aprendidos do zero, ou que tirassem o jogador do loop de retenção em vez de mantê-lo nele.',
+      ],
       solution: {
-        intro: 'Reuni perfil, audiência, conteúdos e pacotes comerciais em uma experiência responsiva.',
+        intro: 'Desenhei os três minigames de ponta a ponta, adaptando cada mecânica a um mesmo fluxo e à identidade visual do cassino.',
         steps: [
-          { title: 'Organização pela decisão da marca', text: 'Organizei a hierarquia das informações na ordem das perguntas de quem avalia uma parceria, com os indicadores em destaque.' },
-          { title: 'Preços visíveis e contratação', text: 'Deixei pacotes e valores à vista, com a contratação a um toque pelo WhatsApp.' },
-          { title: 'Dados em movimento', text: 'Animei métricas e audiência para serem lidas rapidamente, sem depender do movimento para aparecer.' },
-          { title: 'Experiência no navegador do Instagram', text: 'Pensei layout, carregamento e interações para o navegador interno do Instagram e gerei também a versão em PDF.' },
+          { title: 'Um loop para três mecânicas', text: 'Fiz todos seguirem a mesma sequência: comprar, jogar, receber. O jogador aprende o fluxo uma vez, e só a interação central muda de um jogo para o outro.' },
+          { title: 'Prêmios à vista antes da compra', text: 'Na tela de compra, mostrei o custo em moedas e a lista de recompensas possíveis de cada jogo antes do primeiro toque.' },
+          { title: 'A um toque do HUB', text: 'Coloquei os minigames direto no HUB, em vez de escondê-los em submenus, para manter curto o caminho entre missão, torneio e jogo.' },
+          { title: 'Interação de verdade', text: 'Desenhei a roleta que gira, a caixa que abre e a cartela que se raspa como interações reais, não como telas estáticas, e terminei os três jogos na mesma tela de recompensa.' },
         ],
       },
       result: {
-        text: ['Publiquei o case no portfólio como projeto conceitual, com a página navegável e o PDF do media kit, pronto para ser adaptado a influenciadores reais.'],
+        text: ['Os três minigames entraram em produção dentro do HUB de gamificação da Play4tune, com o mesmo fluxo, a mesma tela de recompensa e os componentes do Design System multi-tenant.'],
         numbers: [
-          { value: '8', label: 'seções' },
-          { value: '6', label: 'pacotes' },
-          { value: '1', label: 'PDF' },
-          { value: '0', label: 'conteúdo perdido sem JavaScript' },
+          { value: '3', label: 'minigames' },
+          { value: '9', label: 'telas, da compra à recompensa' },
+          { value: '3', label: 'passos em cada jogo' },
+          { value: '1', label: 'tela de recompensa para os três' },
         ],
       },
     },
     en: {
-      category: 'Media kit',
-      subtitle: 'I conceived a media kit as a landing page, as a product proposal for influencers.',
-      summary: 'I conceived an online media kit for a skincare persona, with metrics, audience and packages bookable on WhatsApp.',
-      facts: { role: 'UX/UI + front-end', duration: 'Less than 1 month', platform: 'Responsive web', team: 'Self-initiated project' },
-      challenge: ['A PDF media kit is usually skimmed in a hurry by whoever decides on a partnership. I wanted to test a format that made it easier for brands to evaluate and that worked well inside Instagram’s in-app browser.'],
+      category: 'Minigames',
+      subtitle: 'I designed three minigames inside Play4tune’s gamification HUB: Roulette, Mystery Box and Scratch Card.',
+      summary: 'I designed three mobile minigames end to end, where players trade the coins they earn in missions and tournaments for prizes, always in the same purchase, play and reward loop.',
+      facts: { role: 'Product Designer · end to end', duration: 'Feb–Sep 2026', platform: 'Mobile', team: 'Me (design) + Product + Engineering' },
+      galleryTitle: 'Screens in production',
+      galleryCaption: 'Each minigame from start to finish: purchase, play and reward.',
+      groups: {
+        roulette: { title: 'Roulette', text: 'Buy a spin, watch the wheel turn and collect the prize.' },
+        'mystery-box': { title: 'Mystery Box', text: 'Buy a box, open it and reveal what’s inside.' },
+        'scratch-card': { title: 'Scratch Card', text: 'Buy a card, scratch it and find the prize.' },
+      },
+      screenLabels: {
+        'roulette-purchase': 'Purchase', 'roulette-play': 'Play', 'roulette-reward': 'Reward',
+        'mystery-box-purchase': 'Purchase', 'mystery-box-play': 'Play', 'mystery-box-reward': 'Reward',
+        'scratch-card-purchase': 'Purchase', 'scratch-card-play': 'Play', 'scratch-card-reward': 'Reward',
+      },
+      challenge: [
+        'The coins players earned in missions and tournaments needed somewhere to go besides the store: something quick and fun to play inside the platform itself.',
+        'Each minigame brought a different mechanic. The risk was ending up with three games that had to be learned from scratch, or that pulled players out of the retention loop instead of keeping them in it.',
+      ],
       solution: {
-        intro: 'I brought profile, audience, content and commercial packages together in a responsive experience.',
+        intro: 'I designed all three minigames end to end, fitting each mechanic into a single flow and into the casino’s visual identity.',
         steps: [
-          { title: 'Organized around the brand’s decision', text: 'I ordered the information by the questions a brand asks when evaluating a partnership, with key indicators highlighted.' },
-          { title: 'Visible pricing and booking', text: 'I kept packages and prices in plain sight, with booking one tap away on WhatsApp.' },
-          { title: 'Data in motion', text: 'I animated metrics and audience data for quick reading, without depending on motion for them to appear.' },
-          { title: 'Built for Instagram’s browser', text: 'I designed layout, loading and interactions for Instagram’s in-app browser and also produced a PDF version.' },
+          { title: 'One loop for three mechanics', text: 'I made all of them follow the same sequence: buy, play, collect. Players learn the flow once, and only the core interaction changes from one game to the next.' },
+          { title: 'Prizes in view before buying', text: 'On the purchase screen, I showed the cost in coins and the list of possible rewards for each game before the first tap.' },
+          { title: 'One tap from the HUB', text: 'I placed the minigames right in the HUB instead of burying them in submenus, to keep the path between missions, tournaments and play short.' },
+          { title: 'Real interaction', text: 'I designed the spinning wheel, the opening box and the scratch card as real interactions, not static screens, and ended all three games on the same reward screen.' },
         ],
       },
       result: {
-        text: ['I published the case in my portfolio as a concept project, with the navigable page and the media kit PDF, ready to be adapted for real influencers.'],
+        text: ['All three minigames went into production inside Play4tune’s gamification HUB, sharing the same flow, the same reward screen and the multi-tenant Design System’s components.'],
         numbers: [
-          { value: '8', label: 'sections' },
-          { value: '6', label: 'packages' },
-          { value: '1', label: 'PDF' },
-          { value: '0', label: 'content lost without JavaScript' },
+          { value: '3', label: 'minigames' },
+          { value: '9', label: 'screens, from purchase to reward' },
+          { value: '3', label: 'steps in every game' },
+          { value: '1', label: 'reward screen shared by all three' },
         ],
       },
     },

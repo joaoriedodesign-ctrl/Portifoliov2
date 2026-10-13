@@ -26,7 +26,7 @@ export const copy = {
     },
     meta: {
       home: { title: 'João Riedo — Product Designer', description: 'Portfólio de João Riedo, Product Designer. Design de produtos digitais, da estrutura à experiência.' },
-      projects: { title: 'Projetos — João Riedo', description: 'Projetos de João Riedo: Design System Multi-tenant, Instituto MAIS, Dr. Carlos Mattos e Marina Alves.' },
+      projects: { title: 'Projetos — João Riedo', description: 'Projetos de João Riedo: Instituto MAIS, Design System Multi-tenant, Retention System e Exclusive Games da Play4tune.' },
       about: { title: 'Sobre — João Riedo', description: 'Trajetória, competências, formação e certificações de João Riedo, Product Designer com foco em UX/UI e Design Systems.' },
       contact: { title: 'Contato — João Riedo', description: 'Me fale sobre seu projeto. Envie uma mensagem para João Riedo pelo WhatsApp.' },
       notFound: { title: 'Página não encontrada — João Riedo', description: 'A página procurada não existe.' },
@@ -47,7 +47,7 @@ export const copy = {
     },
     projects: {
       title: 'Projetos',
-      intro: 'Design system, sites e landing pages que criei, com o desafio, a solução e o resultado de cada um.',
+      intro: 'Design system, produtos de gamificação e um site que criei, com o desafio, a solução e o resultado de cada um.',
     },
     project: {
       breadcrumb: 'Projetos',
@@ -178,7 +178,7 @@ export const copy = {
     },
     meta: {
       home: { title: 'João Riedo — Product Designer', description: 'Portfolio of João Riedo, Product Designer. Designing digital products, from structure to experience.' },
-      projects: { title: 'Projects — João Riedo', description: 'Projects by João Riedo: Multi-tenant Design System, Instituto MAIS, Dr. Carlos Mattos and Marina Alves.' },
+      projects: { title: 'Projects — João Riedo', description: 'Projects by João Riedo: Instituto MAIS, Multi-tenant Design System, and Play4tune’s Retention System and Exclusive Games.' },
       about: { title: 'About — João Riedo', description: 'Experience, skills, education and certifications of João Riedo, Product Designer focused on UX/UI and Design Systems.' },
       contact: { title: 'Contact — João Riedo', description: 'Tell me about your project. Send João Riedo a message on WhatsApp.' },
       notFound: { title: 'Page not found — João Riedo', description: 'The page you are looking for does not exist.' },
@@ -199,7 +199,7 @@ export const copy = {
     },
     projects: {
       title: 'Projects',
-      intro: 'A design system, websites and landing pages I created, each with its challenge, solution and result.',
+      intro: 'A design system, gamification products and a website I created, each with its challenge, solution and result.',
     },
     project: {
       breadcrumb: 'Projects',

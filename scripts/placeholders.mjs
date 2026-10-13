@@ -35,26 +35,6 @@ cover({
   </g>`,
 });
 
-cover({
-  slug: 'dr-carlos-mattos', bg: P['neutral/950'], ink: P['neutral/50'], sub: P['neutral/300'],
-  name: 'Dr. Carlos Mattos', meta: 'Landing page · 2026',
-  shapes: `<path d="M1080 640V340a200 200 0 0 1 400 0v300Z" fill="${P['brand/600']}"/>
-    <circle cx="1280" cy="330" r="46" fill="${P['neutral/50']}"/>
-    <path d="M880 640h160" stroke="${P['neutral/700']}" stroke-width="4"/><path d="M880 590h120" stroke="${P['neutral/700']}" stroke-width="4"/>`,
-});
-
-cover({
-  slug: 'marina-alves', bg: P['brand/100'], ink: P['brand/950'], sub: P['brand/800'],
-  name: 'Marina Alves', meta: 'Mídia kit · 2026',
-  shapes: `<g transform="translate(940 120)" fill="${P['brand/600']}">
-    <rect x="0" y="300" width="96" height="220" rx="48"/>
-    <rect x="120" y="160" width="96" height="360" rx="48" fill="${P['brand/800']}"/>
-    <rect x="240" y="60" width="96" height="460" rx="48"/>
-    <rect x="360" y="220" width="96" height="300" rx="48" fill="${P['brand/400']}"/>
-    <rect x="480" y="120" width="96" height="400" rx="48" fill="${P['brand/950']}"/>
-  </g>`,
-});
-
 // Fallback da demonstração (print provisório) — 1440×900
 function demo(slug, name, accent) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900">${style()}
@@ -73,8 +53,6 @@ ${tag(96, 120, 'PRÉVIA PROVISÓRIA', P['base/white'], P['neutral/950'])}
   writeFileSync(new URL(`demo-${slug}.svg`, out), svg);
 }
 demo('instituto-mais', 'Instituto MAIS', P['brand/600']);
-demo('dr-carlos-mattos', 'Dr. Carlos Mattos', P['neutral/950']);
-demo('marina-alves', 'Marina Alves', P['brand/800']);
 
 // Retrato provisório 960×1200 — composição geométrica, sem pessoa real
 writeFileSync(new URL('portrait.svg', out), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 1200" width="960" height="1200">${style()}

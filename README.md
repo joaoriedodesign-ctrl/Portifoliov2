@@ -32,9 +32,11 @@ Publicação: suba o conteúdo de `dist/`. Ele já traz `vercel.json` (Vercel), 
 | Parâmetros da sequência 3D (perspectiva, deslocamento, fade) | `CONFIG` em `src/client/depth-stack.js` |
 
 - **Imagens reais:** coloque o arquivo em `public/assets/…` e troque o caminho em `assets.js`. Se a proporção mudar, atualize `width`/`height`.
-- **Sites dos projetos:** ficam em `public/projects/<slug>/` (Instituto MAIS, Dr. Carlos Mattos, Marina Alves) e aparecem embutidos na página de cada projeto. Para atualizar um site, substitua a pasta dele. A cópia do Instituto MAIS vai sem o `.htaccess` da clínica, que redirecionaria tudo para o domínio dela. As pastas em `/projects/` saem com `noindex`.
+- **Sites dos projetos:** ficam em `public/projects/<slug>/` (hoje, só o Instituto MAIS) e aparecem embutidos na página de cada projeto. Para atualizar um site, substitua a pasta dele. A cópia do Instituto MAIS vai sem o `.htaccess` da clínica, que redirecionaria tudo para o domínio dela. As pastas em `/projects/` saem com `noindex`.
 - **Ordem dos projetos:** `projectOrder` em `src/content/projects.js`.
 - **Design System Multi-tenant:** conteúdo trazido da v1 (`lib/case-studies.ts`). No lugar da demonstração, mostra telas reais em pares desktop/mobile (`assets.dsScreens`).
+- **Retention System e Exclusive Games (Play4tune):** cases mobile sem site navegável. A galeria agrupa as telas por módulo (`screens` em `projects.js`, imagens em `assets.mobileScreens`). As telas e capas saem da seção *Export — joaoriedo.com (Play4tune)* da página *_Assets portfólio* no Figma, exportadas em 2x e convertidas para WebP.
+- **Projetos removidos:** Dr. Carlos Mattos e Marina Alves saíram em 13/10/2026. Os endereços antigos redirecionam para `/projetos` (`routes.js`).
 - **Demonstração:** `demo.embedUrl` aponta para a cópia local. O iframe só é criado quando a área se aproxima da tela, renderiza na largura real (1440 px ou 390 px) reduzida para caber e roda com sandbox sem pop-ups: links de WhatsApp e downloads dentro da demo não abrem. Se não carregar, entra o fallback (print + link). Estados para teste: `?demo=loading` e `?demo=unavailable`.
 
 ## Tokens (Figma → código)

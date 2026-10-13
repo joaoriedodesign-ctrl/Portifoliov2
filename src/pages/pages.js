@@ -10,7 +10,7 @@ import { projectSequence, projectGrid } from '../components/projects.js';
 import { testimonialsSection } from '../components/testimonials.js';
 import { contactForm } from '../components/contact-form.js';
 import { demoViewer } from '../components/demo-viewer.js';
-import { screenGallery } from '../components/screen-gallery.js';
+import { screenGallery, mobileGallery } from '../components/screen-gallery.js';
 import { button, linkOrPending, media } from '../components/primitives.js';
 import { icons } from '../components/icons.js';
 
@@ -68,7 +68,7 @@ export function projectPage(ctx) {
     </div>
   </header>
 
-  <div class="container">${p.demo ? demoViewer(ctx, slug, p) : screenGallery(ctx, slug, p)}</div>
+  <div class="container">${p.demo ? demoViewer(ctx, slug, p) : p.screens ? mobileGallery(ctx, slug, p) : screenGallery(ctx, slug, p)}</div>
 
   <section class="project__section container" aria-labelledby="challenge-title">
     <h2 class="section-title" id="challenge-title">${pt.challengeTitle}</h2>
