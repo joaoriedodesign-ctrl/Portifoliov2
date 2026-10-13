@@ -108,21 +108,21 @@ PT = {
     ],
     'proj_t': 'Projetos em destaque',
     'proj': [
-        ('Design System Supernova', 'Plataforma white-label', 'Em produção', None, [
+        ('Design System Supernova', 'Plataforma white-label', 'Em produção', link('https://joaoriedo.com/projetos/multi-tenant-design-system', 'joaoriedo.com/projetos/multi-tenant-design-system'), [
             'Criei arquitetura de tokens primitivos e semânticos, componentes reutilizáveis e temas para a operação internacional da Supernova e os tenants Play4tune e Multibet, substituindo arquivos dispersos por uma base compartilhada.',
             'Estruturei a implementação com Figma e Storybook: <b>87 telas, mais de 200 componentes, 3 tenants e redução estimada de 80% no tempo de criação de telas</b>.',
+        ]),
+        ('Retention System Play4tune', 'Gamificação mobile', 'Em produção', link('https://joaoriedo.com/projetos/retention-system', 'joaoriedo.com/projetos/retention-system'), [
+            'Desenhei de ponta a ponta um loop de gamificação mobile com <b>5 módulos e 15 telas</b>: missões e torneios geram moedas, a loja converte as moedas em giros nos slots favoritos e o perfil fecha o ciclo com ranking, nível e histórico.',
+            'Concentrei os módulos em um HUB de acesso único e construí o sistema sobre os tokens e componentes do Design System multi-tenant, em parceria com Produto e Engenharia.',
+        ]),
+        ('Exclusive Games Play4tune', 'Minigames mobile', 'Em produção', link('https://joaoriedo.com/projetos/exclusive-games', 'joaoriedo.com/projetos/exclusive-games'), [
+            'Desenhei de ponta a ponta três minigames, Roleta, Caixa Misteriosa e Raspadinha, em que o jogador troca as moedas de missões e torneios por prêmios.',
+            'Padronizei as três mecânicas no mesmo fluxo de compra, jogo e recompensa, com <b>9 telas</b> e acesso direto pelo HUB de gamificação.',
         ]),
         ('Instituto MAIS', 'Branding, UX/UI e desenvolvimento', 'Publicado', link('https://institutomaislondrina.com.br', 'institutomaislondrina.com.br'), [
             'Criei e implementei o projeto completo de presença digital da clínica: identidade visual, logotipo, variáveis, tokens, interfaces e publicação do site.',
             'Organizei conteúdo e caminhos de contato para facilitar o agendamento e apoiar divulgação e campanhas de aquisição, com experiência responsiva para mobile e desktop.',
-        ]),
-        ('Marina Alves', 'Media kit digital', 'Projeto conceitual', link('https://joaoriedo.com/projects/marina-alves/', 'joaoriedo.com/projects/marina-alves/'), [
-            'Concebi um media kit em formato de landing page como proposta de produto para influenciadores, reunindo perfil, audiência, conteúdos e pacotes comerciais em uma experiência responsiva.',
-            'Organizei a hierarquia de informações para facilitar a avaliação por marcas, com indicadores em destaque e chamadas para contato via WhatsApp. Publiquei o case no meu portfólio.',
-        ]),
-        ('Zentupet', 'SaaS para creches e hotéis pet', 'Protótipo', None, [
-            'Conduzi pesquisa de mercado e projetei <b>14 telas</b>, componentes e um Design System para dois perfis: equipe do estabelecimento e responsáveis pelos pets.',
-            'Desenhei fluxos do check-in ao check-out, contemplando atividades, medicação, banho e tosa em um projeto individual de gestão da rotina dos pets.',
         ]),
     ],
     'edu_t': 'Formação acadêmica',
@@ -184,21 +184,21 @@ EN = {
     ],
     'proj_t': 'Selected projects',
     'proj': [
-        ('Supernova Design System', 'White-label platform', 'In production', None, [
+        ('Supernova Design System', 'White-label platform', 'In production', link('https://joaoriedo.com/en/projects/multi-tenant-design-system', 'joaoriedo.com/en/projects/multi-tenant-design-system'), [
             'Created a primitive and semantic token architecture, reusable components and themes for Supernova’s international operation and the Play4tune and Multibet tenants, replacing scattered files with a shared foundation.',
             'Structured the implementation with Figma and Storybook: <b>87 screens, 200+ components, 3 tenants and an estimated 80% reduction in screen creation time</b>.',
+        ]),
+        ('Retention System Play4tune', 'Mobile gamification', 'In production', link('https://joaoriedo.com/en/projects/retention-system', 'joaoriedo.com/en/projects/retention-system'), [
+            'Designed a mobile gamification loop end to end, with <b>5 modules and 15 screens</b>: missions and tournaments pay out coins, the store turns coins into spins on favorite slots, and the profile closes the cycle with ranking, level and history.',
+            'Brought the modules together in a single-entry HUB and built the system on the multi-tenant Design System’s tokens and components, together with Product and Engineering.',
+        ]),
+        ('Exclusive Games Play4tune', 'Mobile minigames', 'In production', link('https://joaoriedo.com/en/projects/exclusive-games', 'joaoriedo.com/en/projects/exclusive-games'), [
+            'Designed three minigames end to end, Roulette, Mystery Box and Scratch Card, where players trade the coins they earn in missions and tournaments for prizes.',
+            'Standardized the three mechanics into the same purchase, play and reward flow, with <b>9 screens</b> and direct access from the gamification HUB.',
         ]),
         ('Instituto MAIS', 'Branding, UX/UI and development', 'Live', link('https://institutomaislondrina.com.br', 'institutomaislondrina.com.br'), [
             'Created and implemented the clinic’s complete digital presence: visual identity, logo, variables, tokens, interfaces and website launch.',
             'Organized content and contact paths to make booking easier and support promotion and acquisition campaigns, with a responsive experience for mobile and desktop.',
-        ]),
-        ('Marina Alves', 'Digital media kit', 'Concept project', link('https://joaoriedo.com/projects/marina-alves/', 'joaoriedo.com/projects/marina-alves/'), [
-            'Conceived a media kit as a landing page, as a product proposal for influencers, bringing profile, audience, content and commercial packages together in a responsive experience.',
-            'Organized the information hierarchy to make evaluation easier for brands, with highlighted indicators and WhatsApp contact calls to action. Published the case in my portfolio.',
-        ]),
-        ('Zentupet', 'SaaS for pet daycares and hotels', 'Prototype', None, [
-            'Ran market research and designed <b>14 screens</b>, components and a Design System for two profiles: facility staff and pet owners.',
-            'Designed flows from check-in to check-out, covering activities, medication, bath and grooming, in a solo project for managing pets’ routines.',
         ]),
     ],
     'edu_t': 'Education',
